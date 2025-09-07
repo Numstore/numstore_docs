@@ -1,9 +1,11 @@
 Numstore
-  Comparison with other Databases
+  What is Numstore?
   Usecases
-  What can Numstore <em>not</em> do?
-  Features Overview
+  Comparison with other Databases
+  Metrics and Numbers
+  What can Numstore not do?
   Features Cheat sheet
+  Features Overview
 
   Getting Started
     Linux
@@ -24,6 +26,7 @@ Numstore
     Array
 
   Variable Operations
+    Summary
     Create
     Delete
     Insert
@@ -34,8 +37,14 @@ Numstore
 
   Configuration
     Variable Level
+      Windowed
     System Level 
+      Number of Threads 
+      Page Size 
+      Memory Limits
+        Buffer Pool
 
-  Interfaces
+  Application Programming Interfaces
+    Numstore C Library
     Command Line Interface (CLI)
     TCP
