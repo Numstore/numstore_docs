@@ -3,7 +3,7 @@ import ROOT from "./autogen/ROOT.vue";
 </script>
 
 <template>
-  <div class="w-[64rem] mx-auto bg-yellow-500 gap-8">
+  <div class="w-[64rem] mx-auto gap-8">
     <ROOT/>
   </div>
 </template>

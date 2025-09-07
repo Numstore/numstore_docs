@@ -2,6 +2,11 @@
 <script setup lang="ts">
 import NumstoreSection from "./Numstore/Index.vue";
 import NumstoreWhatIsNumstoreSection from "./Numstore/What is Numstore_/Index.vue";
+import NumstoreWhatIsNumstoreContextSection from "./Numstore/What is Numstore_/Context/Index.vue";
+import NumstoreWhatIsNumstoreHistoricalPrecedentMachineLearningSection from "./Numstore/What is Numstore_/Historical Precedent_ Machine Learning/Index.vue";
+import NumstoreWhatIsNumstoreHistoricalPrecedentUSIntelligenceCommunitySection from "./Numstore/What is Numstore_/Historical Precedent_ US Intelligence Community/Index.vue";
+import NumstoreWhatIsNumstoreOtherScientificAndEngineeringFormatsSection from "./Numstore/What is Numstore_/Other Scientific and Engineering Formats/Index.vue";
+import NumstoreWhatIsNumstoreNumstoreSPositioningSection from "./Numstore/What is Numstore_/Numstore's Positioning/Index.vue";
 import NumstoreUsecasesSection from "./Numstore/Usecases/Index.vue";
 import NumstoreComparisonWithOtherDatabasesSection from "./Numstore/Comparison with other Databases/Index.vue";
 import NumstoreMetricsAndNumbersSection from "./Numstore/Metrics and Numbers/Index.vue";
@@ -53,6 +58,13 @@ import NumstoreApplicationProgrammingInterfacesTCPSection from "./Numstore/Appli
 <li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-numstore">Numstore</a></li>
 <ul class="list-disc ml-6">
 <li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-what-is-numstore">What is Numstore?</a></li>
+<ul class="list-disc ml-6">
+<li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-context">Context</a></li>
+<li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-historical-precedent-machine-learning">Historical Precedent: Machine Learning</a></li>
+<li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-historical-precedent-us-intelligence-community">Historical Precedent: US Intelligence Community</a></li>
+<li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-other-scientific-and-engineering-formats">Other Scientific and Engineering Formats</a></li>
+<li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-numstores-positioning">Numstore&#x27;s Positioning</a></li>
+</ul>
 <li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-usecases">Usecases</a></li>
 <li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-comparison-with-other-databases">Comparison with other Databases</a></li>
 <li class="mb-1"><a class="text-blue-600 hover:underline" href="#rawdocs-metrics-and-numbers">Metrics and Numbers</a></li>
@@ -123,6 +135,26 @@ import NumstoreApplicationProgrammingInterfacesTCPSection from "./Numstore/Appli
 <!-- From: Numstore/What is Numstore? -->
 <h2 id="rawdocs-what-is-numstore">What is Numstore?</h2>
 <NumstoreWhatIsNumstoreSection />
+
+<!-- From: Numstore/What is Numstore?/Context -->
+<h3 id="rawdocs-context">Context</h3>
+<NumstoreWhatIsNumstoreContextSection />
+
+<!-- From: Numstore/What is Numstore?/Historical Precedent: Machine Learning -->
+<h3 id="rawdocs-historical-precedent-machine-learning">Historical Precedent: Machine Learning</h3>
+<NumstoreWhatIsNumstoreHistoricalPrecedentMachineLearningSection />
+
+<!-- From: Numstore/What is Numstore?/Historical Precedent: US Intelligence Community -->
+<h3 id="rawdocs-historical-precedent-us-intelligence-community">Historical Precedent: US Intelligence Community</h3>
+<NumstoreWhatIsNumstoreHistoricalPrecedentUSIntelligenceCommunitySection />
+
+<!-- From: Numstore/What is Numstore?/Other Scientific and Engineering Formats -->
+<h3 id="rawdocs-other-scientific-and-engineering-formats">Other Scientific and Engineering Formats</h3>
+<NumstoreWhatIsNumstoreOtherScientificAndEngineeringFormatsSection />
+
+<!-- From: Numstore/What is Numstore?/Numstore's Positioning -->
+<h3 id="rawdocs-numstores-positioning">Numstore's Positioning</h3>
+<NumstoreWhatIsNumstoreNumstoreSPositioningSection />
 
 <!-- From: Numstore/Usecases -->
 <h2 id="rawdocs-usecases">Usecases</h2>

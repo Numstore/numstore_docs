@@ -44,9 +44,9 @@ const props = withDefaults(
       itemHoverClass?: string
     }>(),
     {
-      bgClass: 'bg-blue-700',
-      groupHoverClass: 'hover:bg-blue-500',
-      itemHoverClass: 'hover:bg-blue-800'
+      bgClass: 'bg-blue-400',
+      groupHoverClass: 'hover:bg-blue-300',
+      itemHoverClass: 'hover:bg-blue-500'
     }
 )
 

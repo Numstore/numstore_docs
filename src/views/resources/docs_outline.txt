@@ -1,5 +1,10 @@
 Numstore
   What is Numstore?
+    Context
+    Historical Precedent: Machine Learning
+    Historical Precedent: US Intelligence Community
+    Other Scientific and Engineering Formats
+    Numstore's Positioning
   Usecases
   Comparison with other Databases
   Metrics and Numbers

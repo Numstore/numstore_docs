@@ -30,6 +30,12 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/resources/Blog.vue'),
         meta: {section: 'Resources', label: 'Blog'}
     },
+    {
+        path: '/resources/references',
+        name: 'References',
+        component: () => import('@/views/resources/ReferencesMain.vue'),
+        meta: {section: 'Resources', label: 'References'}
+    },
 
     // -------------------------- Services --------------------------
     {path: '/services', redirect: '/services/enterprise_support'},

@@ -24,7 +24,8 @@ const groups: Group[] = [
     label: 'Resources',
     links: [
       {text: 'Documentation', href: '/resources/documentation'},
-      {text: 'Blog', href: '/resources/blog'}
+      {text: 'Blog', href: '/resources/blog'},
+      {text: 'References', href: '/resources/references'}
     ]
   },
   {
