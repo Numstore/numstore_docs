@@ -24,10 +24,18 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/resources/ResourcesDocumentation.vue'),
         meta: {section: 'Resources', label: 'Documentation'}
     },
+    // Redirect legacy blog path to new /blog routes
     {
         path: '/resources/blog',
-        name: 'ResourcesBlog',
-        component: () => import('@/views/resources/Blog.vue'),
+        name: 'Blog',
+        component: () => import('@/views/resources/BlogIndex.vue'),
+        meta: {section: 'Resources', label: 'Blog'}
+    },
+    {
+        path: '/resources/blog/:slug',
+        name: 'ResourcesBlogPost',
+        component: () => import('@/views/resources/BlogPostPage.vue'),
+        props: true,
         meta: {section: 'Resources', label: 'Blog'}
     },
     {

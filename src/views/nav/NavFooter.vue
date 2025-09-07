@@ -76,8 +76,8 @@ const groups: Group[] = [
         </ul>
       </div>
     </div>
-    <div v-if="false" class="bg-green-300 text-center text-black text-sm">
-      Copyright © 2001-2025, Lincke Solutions LLC.
+    <div class="bg-green-300 text-center text-black text-sm">
+      Copyright © 2001-2025, The Company LLC.
     </div>
   </footer>
 </template>

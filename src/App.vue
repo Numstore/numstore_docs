@@ -74,22 +74,6 @@ import NavFooter from "@/views/nav/NavFooter.vue";
                 label="About"
             />
           </nav>
-
-          <!-- Collapsing search bar -->
-          <div class="flex flex-row-reverse items-center bg-gray-100
-              text-gray-600 w-8 focus-within:w-64 overflow-hidden">
-
-            <!-- Search Button -->
-            <button class="p-2 focus:outline-none" onclick="this.nextElementSibling.focus()" type="button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-
-            <!-- Input -->
-            <input class="flex-grow bg-transparent px-3 py-2 text-sm focus:outline-none"
-                   placeholder="Search..."
-                   type="text"
-            />
-          </div>
         </div>
       </div>
     </header>
@@ -101,9 +85,6 @@ import NavFooter from "@/views/nav/NavFooter.vue";
 
     <!-- Footer -->
     <NavFooter/>
-
-    <!-- Footer -->
-
   </div>
 </template>
 
