@@ -7,13 +7,13 @@ import NavFooter from "@/views/nav/NavFooter.vue";
 <template>
   <div class="flex flex-col min-h-screen">
     <!-- Header -->
-    <header class="ml-10">
+    <header>
 
       <!-- Left Justified Logo SPACE Right Justified Links -->
       <div class="flex flex-row items-center items-end justify-start py-10">
 
         <!-- Logo -->
-        <div class="flex flex-col">
+        <div class="flex flex-col ml-5">
           <h1 class="font-bold">The Database for Machine Learning</h1>
 
           <div class="flex flex-row align-bottom">
@@ -103,9 +103,7 @@ import NavFooter from "@/views/nav/NavFooter.vue";
     <NavFooter/>
 
     <!-- Footer -->
-    <div class="bg-green-300 text-center text-sm">
-      Copyright © 2001-2025, Lincke Solutions LLC.
-    </div>
+
   </div>
 </template>
 

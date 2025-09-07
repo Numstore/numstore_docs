@@ -131,198 +131,247 @@ import NumstoreApplicationProgrammingInterfacesTCPSection from "./Numstore/Appli
 <!-- From: Numstore -->
 <h1 id="rawdocs-numstore">Numstore</h1>
 <NumstoreSection />
+<br>
 
 <!-- From: Numstore/What is Numstore? -->
 <h2 id="rawdocs-what-is-numstore">What is Numstore?</h2>
 <NumstoreWhatIsNumstoreSection />
+<br>
 
 <!-- From: Numstore/What is Numstore?/Context -->
 <h3 id="rawdocs-context">Context</h3>
 <NumstoreWhatIsNumstoreContextSection />
+<br>
 
 <!-- From: Numstore/What is Numstore?/Historical Precedent: Machine Learning -->
 <h3 id="rawdocs-historical-precedent-machine-learning">Historical Precedent: Machine Learning</h3>
 <NumstoreWhatIsNumstoreHistoricalPrecedentMachineLearningSection />
+<br>
 
 <!-- From: Numstore/What is Numstore?/Historical Precedent: US Intelligence Community -->
 <h3 id="rawdocs-historical-precedent-us-intelligence-community">Historical Precedent: US Intelligence Community</h3>
 <NumstoreWhatIsNumstoreHistoricalPrecedentUSIntelligenceCommunitySection />
+<br>
 
 <!-- From: Numstore/What is Numstore?/Other Scientific and Engineering Formats -->
 <h3 id="rawdocs-other-scientific-and-engineering-formats">Other Scientific and Engineering Formats</h3>
 <NumstoreWhatIsNumstoreOtherScientificAndEngineeringFormatsSection />
+<br>
 
 <!-- From: Numstore/What is Numstore?/Numstore's Positioning -->
 <h3 id="rawdocs-numstores-positioning">Numstore's Positioning</h3>
 <NumstoreWhatIsNumstoreNumstoreSPositioningSection />
+<br>
 
 <!-- From: Numstore/Usecases -->
 <h2 id="rawdocs-usecases">Usecases</h2>
 <NumstoreUsecasesSection />
+<br>
 
 <!-- From: Numstore/Comparison with other Databases -->
 <h2 id="rawdocs-comparison-with-other-databases">Comparison with other Databases</h2>
 <NumstoreComparisonWithOtherDatabasesSection />
+<br>
 
 <!-- From: Numstore/Metrics and Numbers -->
 <h2 id="rawdocs-metrics-and-numbers">Metrics and Numbers</h2>
 <NumstoreMetricsAndNumbersSection />
+<br>
 
 <!-- From: Numstore/What can Numstore not do? -->
 <h2 id="rawdocs-what-can-numstore-not-do">What can Numstore not do?</h2>
 <NumstoreWhatCanNumstoreNotDoSection />
+<br>
 
 <!-- From: Numstore/Features Cheat sheet -->
 <h2 id="rawdocs-features-cheat-sheet">Features Cheat sheet</h2>
 <NumstoreFeaturesCheatSheetSection />
+<br>
 
 <!-- From: Numstore/Features Overview -->
 <h2 id="rawdocs-features-overview">Features Overview</h2>
 <NumstoreFeaturesOverviewSection />
+<br>
 
 <!-- From: Numstore/Getting Started -->
 <h2 id="rawdocs-getting-started">Getting Started</h2>
 <NumstoreGettingStartedSection />
+<br>
 
 <!-- From: Numstore/Getting Started/Linux -->
 <h3 id="rawdocs-linux">Linux</h3>
 <NumstoreGettingStartedLinuxSection />
+<br>
 
 <!-- From: Numstore/Getting Started/Windows -->
 <h3 id="rawdocs-windows">Windows</h3>
 <NumstoreGettingStartedWindowsSection />
+<br>
 
 <!-- From: Numstore/Getting Started/Mac -->
 <h3 id="rawdocs-mac">Mac</h3>
 <NumstoreGettingStartedMacSection />
+<br>
 
 <!-- From: Numstore/Getting Started/Main Concepts -->
 <h3 id="rawdocs-main-concepts">Main Concepts</h3>
 <NumstoreGettingStartedMainConceptsSection />
+<br>
 
 <!-- From: Numstore/Vocabulary -->
 <h2 id="rawdocs-vocabulary">Vocabulary</h2>
 <NumstoreVocabularySection />
+<br>
 
 <!-- From: Numstore/Vocabulary/Variable -->
 <h3 id="rawdocs-variable">Variable</h3>
 <NumstoreVocabularyVariableSection />
+<br>
 
 <!-- From: Numstore/Vocabulary/Type -->
 <h3 id="rawdocs-type">Type</h3>
 <NumstoreVocabularyTypeSection />
+<br>
 
 <!-- From: Numstore/Vocabulary/Array -->
 <h3 id="rawdocs-array">Array</h3>
 <NumstoreVocabularyArraySection />
+<br>
 
 <!-- From: Numstore/Types -->
 <h2 id="rawdocs-types">Types</h2>
 <NumstoreTypesSection />
+<br>
 
 <!-- From: Numstore/Types/Primitive -->
 <h3 id="rawdocs-primitive">Primitive</h3>
 <NumstoreTypesPrimitiveSection />
+<br>
 
 <!-- From: Numstore/Types/Struct -->
 <h3 id="rawdocs-struct">Struct</h3>
 <NumstoreTypesStructSection />
+<br>
 
 <!-- From: Numstore/Types/Union -->
 <h3 id="rawdocs-union">Union</h3>
 <NumstoreTypesUnionSection />
+<br>
 
 <!-- From: Numstore/Types/Enum -->
 <h3 id="rawdocs-enum">Enum</h3>
 <NumstoreTypesEnumSection />
+<br>
 
 <!-- From: Numstore/Types/Array -->
 <h3 id="rawdocs-array">Array</h3>
 <NumstoreTypesArraySection />
+<br>
 
 <!-- From: Numstore/Variable Operations -->
 <h2 id="rawdocs-variable-operations">Variable Operations</h2>
 <NumstoreVariableOperationsSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Summary -->
 <h3 id="rawdocs-summary">Summary</h3>
 <NumstoreVariableOperationsSummarySection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Create -->
 <h3 id="rawdocs-create">Create</h3>
 <NumstoreVariableOperationsCreateSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Delete -->
 <h3 id="rawdocs-delete">Delete</h3>
 <NumstoreVariableOperationsDeleteSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Insert -->
 <h3 id="rawdocs-insert">Insert</h3>
 <NumstoreVariableOperationsInsertSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Remove -->
 <h3 id="rawdocs-remove">Remove</h3>
 <NumstoreVariableOperationsRemoveSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Append -->
 <h3 id="rawdocs-append">Append</h3>
 <NumstoreVariableOperationsAppendSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Take -->
 <h3 id="rawdocs-take">Take</h3>
 <NumstoreVariableOperationsTakeSection />
+<br>
 
 <!-- From: Numstore/Variable Operations/Update -->
 <h3 id="rawdocs-update">Update</h3>
 <NumstoreVariableOperationsUpdateSection />
+<br>
 
 <!-- From: Numstore/Configuration -->
 <h2 id="rawdocs-configuration">Configuration</h2>
 <NumstoreConfigurationSection />
+<br>
 
 <!-- From: Numstore/Configuration/Variable Level -->
 <h3 id="rawdocs-variable-level">Variable Level</h3>
 <NumstoreConfigurationVariableLevelSection />
+<br>
 
 <!-- From: Numstore/Configuration/Variable Level/Windowed -->
 <h4 id="rawdocs-windowed">Windowed</h4>
 <NumstoreConfigurationVariableLevelWindowedSection />
+<br>
 
 <!-- From: Numstore/Configuration/System Level -->
 <h3 id="rawdocs-system-level">System Level</h3>
 <NumstoreConfigurationSystemLevelSection />
+<br>
 
 <!-- From: Numstore/Configuration/System Level/Number of Threads -->
 <h4 id="rawdocs-number-of-threads">Number of Threads</h4>
 <NumstoreConfigurationSystemLevelNumberOfThreadsSection />
+<br>
 
 <!-- From: Numstore/Configuration/System Level/Page Size -->
 <h4 id="rawdocs-page-size">Page Size</h4>
 <NumstoreConfigurationSystemLevelPageSizeSection />
+<br>
 
 <!-- From: Numstore/Configuration/System Level/Memory Limits -->
 <h4 id="rawdocs-memory-limits">Memory Limits</h4>
 <NumstoreConfigurationSystemLevelMemoryLimitsSection />
+<br>
 
 <!-- From: Numstore/Configuration/System Level/Memory Limits/Buffer Pool -->
 <h5 id="rawdocs-buffer-pool">Buffer Pool</h5>
 <NumstoreConfigurationSystemLevelMemoryLimitsBufferPoolSection />
+<br>
 
 <!-- From: Numstore/Application Programming Interfaces -->
 <h2 id="rawdocs-application-programming-interfaces">Application Programming Interfaces</h2>
 <NumstoreApplicationProgrammingInterfacesSection />
+<br>
 
 <!-- From: Numstore/Application Programming Interfaces/Numstore C Library -->
 <h3 id="rawdocs-numstore-c-library">Numstore C Library</h3>
 <NumstoreApplicationProgrammingInterfacesNumstoreCLibrarySection />
+<br>
 
 <!-- From: Numstore/Application Programming Interfaces/Command Line Interface (CLI) -->
 <h3 id="rawdocs-command-line-interface-cli">Command Line Interface (CLI)</h3>
 <NumstoreApplicationProgrammingInterfacesCommandLineInterfaceCLISection />
+<br>
 
 <!-- From: Numstore/Application Programming Interfaces/TCP -->
 <h3 id="rawdocs-tcp">TCP</h3>
 <NumstoreApplicationProgrammingInterfacesTCPSection />
+<br>
 
   </div>
 </template>

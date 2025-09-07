@@ -180,7 +180,7 @@ def render_body(ordered_nodes: List[Tuple[str, ...]]) -> Tuple[str, List[Tuple[s
         tpl.append(f"<!-- From: {'/'.join([strip_tags(p) for p in node])} -->")
         tpl.append(f'<{tag} id="{id_attr}">{title}</{tag}>')
         tpl.append(f"<{comp_name} />")
-        tbl.append("<br>")
+        tpl.append("<br>")
         tpl.append("")  # spacer
 
     return "\n".join(tpl), imports
