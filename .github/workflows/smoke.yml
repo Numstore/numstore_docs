@@ -1,0 +1,11 @@
+name: smoke
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hi from actions"
