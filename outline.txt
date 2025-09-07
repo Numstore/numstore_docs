@@ -1,0 +1,41 @@
+Numstore
+  Comparison with other Databases
+  Usecases
+  What can Numstore <em>not</em> do?
+  Features Overview
+  Features Cheat sheet
+
+  Getting Started
+    Linux
+    Windows
+    Mac
+    Main Concepts
+
+  Vocabulary
+    Variable
+    Type
+    Array
+
+  Types
+    Primitive
+    Struct
+    Union
+    Enum
+    Array
+
+  Variable Operations
+    Create
+    Delete
+    Insert
+    Remove
+    Append
+    Take
+    Update
+
+  Configuration
+    Variable Level
+    System Level 
+
+  Interfaces
+    Command Line Interface (CLI)
+    TCP
