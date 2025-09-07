@@ -4,7 +4,9 @@
     <ul class="space-y-4 list-disc pl-6">
       <li v-for="post in posts" :key="post.slug" class="space-y-1">
         <div>
-          <a :href="`/resources/blog/${post.slug}`" class="underline">{{ post.meta.title }}</a>
+          <RouterLink :to="`/resources/blog/${post.slug}`" class="underline">
+            {{ post.meta.title }}
+          </RouterLink>
           <span class="text-sm text-gray-600"> — {{ post.meta.date }}</span>
         </div>
         <p class="text-sm">{{ post.summary }}</p>
@@ -12,7 +14,6 @@
     </ul>
   </main>
 </template>
-
 
 <script lang="ts" setup>
 

@@ -16,19 +16,21 @@
         bgClass
       ]"
     >
-      <a
+      <RouterLink
           v-for="(item, i) in items"
           :key="i"
           :class="['block px-4 py-2', itemHoverClass]"
-          :href="item.href"
+          :to="item.href"
       >
         {{ item.text }}
-      </a>
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import {RouterLink} from "vue-router";
+
 interface DropdownItem {
   text: string
   href: string

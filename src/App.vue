@@ -17,13 +17,12 @@ import NavFooter from "@/views/nav/NavFooter.vue";
           <h1 class="font-bold">The Database for Machine Learning</h1>
 
           <div class="flex flex-row align-bottom">
-
-            <a href="/">
+            <RouterLink to="/">
               <div class="flex items-center py-2" href="/">
                 <img alt="Logo" class="h-12 pr-3 w-auto" src="@/assets/logo.png"/>
                 <h1 class="text-4xl font-bold">Numstore</h1>
               </div>
-            </a>
+            </RouterLink>
           </div>
         </div>
 

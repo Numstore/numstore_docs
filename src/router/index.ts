@@ -99,12 +99,11 @@ const routes: RouteRecordRaw[] = [
     // -------------------------- Misc --------------------------
     {
         path: '/',
-        name: 'Home',
-        component: () => import('@/views/HomeView.vue')
+        redirect: {name: 'ResourcesDocumentation'},
     },
     {
         path: '/:pathMatch(.*)*',
-        redirect: {name: 'Home'}
+        redirect: '/'
     }
 ]
 
