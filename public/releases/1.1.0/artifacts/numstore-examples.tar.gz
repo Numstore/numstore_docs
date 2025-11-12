@@ -1,0 +1,42 @@
+FAKE ARCHIVE - Numstore 1.1.0 Example Code
+
+This is a simulated examples archive for demonstration purposes.
+
+In a real deployment, this would contain:
+- examples/
+  - c/
+    - basic_usage.c
+    - advanced_queries.c
+    - multithreading.c
+    - streaming_data.c (NEW in 1.1.0)
+    - compression_demo.c (NEW in 1.1.0)
+  - python/
+    - quickstart.py
+    - data_analysis.py
+    - streaming.py (NEW in 1.1.0)
+    - realtime_analytics.py (NEW in 1.1.0)
+  - cpp/
+    - basic_usage.cpp (NEW in 1.1.0)
+  - README.md
+  - Makefile
+
+New Examples in 1.1.0:
+- Streaming data ingestion
+- Real-time analytics
+- C++ bindings usage
+- Data compression examples
+
+Example Usage (Python):
+import numstore
+
+conn = numstore.connect('localhost:7777')
+conn.create_variable('temperature', dtype='float64')
+conn.insert('temperature', [23.5, 24.1, 22.8])
+
+# NEW in 1.1.0: Streaming support
+stream = conn.create_stream('sensor_data')
+stream.append({'temp': 25.3, 'pressure': 1013.25})
+
+conn.close()
+
+Version: 1.1.0

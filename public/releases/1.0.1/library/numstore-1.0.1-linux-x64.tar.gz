@@ -1,0 +1,28 @@
+FAKE ARCHIVE - Numstore 1.0.1 for Linux x86_64
+
+This is a simulated release archive for demonstration purposes.
+Bugfix release with improvements to memory handling and performance optimizations.
+
+In a real deployment, this would be an actual tar.gz file containing:
+- libnumstore.so (shared library)
+- numstore.h (C header file)
+- README.md (installation instructions)
+- CHANGELOG.md (release notes)
+- LICENSE (software license)
+- examples/ (example code directory)
+
+What's New in 1.0.1:
+- Fixed memory leak in array operations
+- Improved query performance by 15%
+- Better error messages
+- Fixed crash on large datasets
+
+Installation (simulated):
+1. Extract: tar -xzf numstore-1.0.1-linux-x64.tar.gz
+2. Copy: sudo cp lib/libnumstore.so /usr/local/lib/
+3. Copy: sudo cp include/numstore.h /usr/local/include/
+4. Run: sudo ldconfig
+
+Version: 1.0.1
+Architecture: Linux x86_64
+Build Date: 2025-10-15

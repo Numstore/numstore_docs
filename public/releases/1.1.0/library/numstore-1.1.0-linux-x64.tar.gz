@@ -1,0 +1,33 @@
+FAKE ARCHIVE - Numstore 1.1.0 for Linux x86_64
+
+This is a simulated release archive for demonstration purposes.
+Major feature release with new capabilities!
+
+In a real deployment, this would be an actual tar.gz file containing:
+- libnumstore.so (shared library)
+- numstore.h (C header file)
+- README.md (installation instructions)
+- CHANGELOG.md (release notes)
+- LICENSE (software license)
+- examples/ (example code directory)
+- tools/ (command-line utilities)
+
+What's New in 1.1.0:
+- NEW: Streaming data support
+- NEW: Real-time analytics engine
+- NEW: Python bindings
+- Improved: 40% faster queries
+- Improved: Reduced memory footprint by 25%
+- Added: Built-in data compression
+- Added: Multi-threaded indexing
+
+Installation (simulated):
+1. Extract: tar -xzf numstore-1.1.0-linux-x64.tar.gz
+2. Copy: sudo cp lib/libnumstore.so /usr/local/lib/
+3. Copy: sudo cp include/numstore.h /usr/local/include/
+4. Copy: sudo cp bin/* /usr/local/bin/
+5. Run: sudo ldconfig
+
+Version: 1.1.0
+Architecture: Linux x86_64
+Build Date: 2025-11-01

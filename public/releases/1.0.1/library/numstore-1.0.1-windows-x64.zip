@@ -1,0 +1,29 @@
+FAKE ARCHIVE - Numstore 1.0.1 for Windows x86_64
+
+This is a simulated release archive for demonstration purposes.
+Bugfix release with improvements to memory handling and performance optimizations.
+
+In a real deployment, this would be an actual zip file containing:
+- numstore.dll (dynamic library)
+- numstore.lib (import library)
+- numstore.h (C header file)
+- README.txt (installation instructions)
+- CHANGELOG.txt (release notes)
+- LICENSE.txt (software license)
+- examples\ (example code directory)
+
+What's New in 1.0.1:
+- Fixed memory leak in array operations
+- Improved query performance by 15%
+- Better error messages
+- Fixed crash on large datasets
+
+Installation (simulated):
+1. Extract numstore-1.0.1-windows-x64.zip
+2. Copy numstore.dll to C:\Windows\System32\
+3. Copy numstore.h and numstore.lib to your project include/lib directories
+4. Link against numstore.lib in your Visual Studio project
+
+Version: 1.0.1
+Architecture: Windows x86_64
+Build Date: 2025-10-15
