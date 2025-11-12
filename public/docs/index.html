@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numstore Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2563eb;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1e40af;
+            margin-top: 30px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #1e3a8a;
+            margin-top: 20px;
+        }
+        code {
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code {
+            background-color: transparent;
+            color: #f9fafb;
+            padding: 0;
+        }
+        .note {
+            background-color: #dbeafe;
+            border-left: 4px solid #2563eb;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Numstore Documentation</h1>
+
+    <div class="note">
+        <strong>Note:</strong> This is a placeholder HTML file. Replace this file with your actual Sphinx-generated documentation.
+    </div>
+
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+    </ul>
+
+    <h2 id="introduction">Introduction</h2>
+    <p>
+        Numstore is a high-performance database system designed for storing and managing numerical data efficiently.
+        This documentation provides comprehensive information about installation, configuration, and usage.
+    </p>
+
+    <h2 id="getting-started">Getting Started</h2>
+    <p>
+        To get started with Numstore, follow these simple steps to install and configure your first instance.
+    </p>
+
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Linux, macOS, or Windows operating system</li>
+        <li>At least 4GB of RAM</li>
+        <li>C compiler (GCC, Clang, or MSVC)</li>
+    </ul>
+
+    <h2 id="installation">Installation</h2>
+
+    <h3>Linux</h3>
+    <pre><code>$ wget https://example.com/numstore-latest.tar.gz
+$ tar -xzf numstore-latest.tar.gz
+$ cd numstore
+$ ./configure
+$ make
+$ sudo make install</code></pre>
+
+    <h3>Windows</h3>
+    <pre><code>C:\> numstore-installer.exe
+C:\> numstore --version</code></pre>
+
+    <h3>macOS</h3>
+    <pre><code>$ brew install numstore
+$ numstore --version</code></pre>
+
+    <h2 id="usage">Usage</h2>
+    <p>
+        Once installed, you can start using Numstore through its command-line interface or programming APIs.
+    </p>
+
+    <h3>Basic Commands</h3>
+    <pre><code># Start the Numstore server
+$ numstore-server start
+
+# Connect to the server
+$ numstore-cli connect localhost:7777
+
+# Create a new variable
+> CREATE VARIABLE temperature TYPE float64
+
+# Insert data
+> INSERT INTO temperature VALUES (23.5, 24.1, 22.8)</code></pre>
+
+    <h2 id="api-reference">API Reference</h2>
+
+    <h3>C Library</h3>
+    <p>The Numstore C library provides low-level access to all database operations.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>ns_connect()</code></td>
+                <td>Establish a connection to the database</td>
+            </tr>
+            <tr>
+                <td><code>ns_create_variable()</code></td>
+                <td>Create a new variable</td>
+            </tr>
+            <tr>
+                <td><code>ns_insert()</code></td>
+                <td>Insert data into a variable</td>
+            </tr>
+            <tr>
+                <td><code>ns_query()</code></td>
+                <td>Query data from a variable</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="warning">
+        <strong>Warning:</strong> Always close your database connections properly to prevent resource leaks.
+    </div>
+
+    <h3>Python API</h3>
+    <pre><code>import numstore
+
+# Connect to database
+conn = numstore.connect('localhost:7777')
+
+# Create variable
+conn.create_variable('temperature', dtype='float64')
+
+# Insert data
+conn.insert('temperature', [23.5, 24.1, 22.8])
+
+# Query data
+data = conn.query('temperature', start=0, end=10)
+
+# Close connection
+conn.close()</code></pre>
+
+    <hr style="margin: 40px 0; border: none; border-top: 1px solid #d1d5db;">
+
+    <p style="text-align: center; color: #6b7280; font-size: 14px;">
+        Replace this entire file with your Sphinx-generated HTML documentation (e.g., <code>sphinx-build -b singlehtml source/ build/</code>)
+    </p>
+</body>
+</html>

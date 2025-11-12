@@ -1,0 +1,80 @@
+{
+  "generated_at": "2025-11-12T21:22:10.504350",
+  "total_releases": 3,
+  "latest_version": "1.1.0",
+  "releases": [
+    {
+      "version": "1.1.0",
+      "library": [
+        {
+          "name": "libnumstore.so",
+          "path": "releases/1.1.0/library/libnumstore.so",
+          "size": 77,
+          "modified": "2025-11-12T21:20:58.807359"
+        }
+      ],
+      "docs": [
+        {
+          "name": "index.html",
+          "path": "releases/1.1.0/docs/index.html",
+          "size": 228,
+          "modified": "2025-11-12T21:20:59.062361"
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "version": "1.0.1",
+      "library": [
+        {
+          "name": "libnumstore.so",
+          "path": "releases/1.0.1/library/libnumstore.so",
+          "size": 77,
+          "modified": "2025-11-12T21:20:58.330357"
+        }
+      ],
+      "docs": [
+        {
+          "name": "index.html",
+          "path": "releases/1.0.1/docs/index.html",
+          "size": 228,
+          "modified": "2025-11-12T21:20:58.549358"
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "version": "1.0.0",
+      "library": [
+        {
+          "name": "libnumstore.so",
+          "path": "releases/1.0.0/library/libnumstore.so",
+          "size": 70,
+          "modified": "2025-11-12T21:20:57.297351"
+        },
+        {
+          "name": "numstore.h",
+          "path": "releases/1.0.0/library/numstore.h",
+          "size": 360,
+          "modified": "2025-11-12T21:20:57.522353"
+        }
+      ],
+      "docs": [
+        {
+          "name": "index.html",
+          "path": "releases/1.0.0/docs/index.html",
+          "size": 228,
+          "modified": "2025-11-12T21:20:57.753354"
+        }
+      ],
+      "artifacts": [
+        {
+          "name": "numstore-cli",
+          "path": "releases/1.0.0/artifacts/numstore-cli",
+          "size": 110,
+          "modified": "2025-11-12T21:20:57.983355"
+        }
+      ]
+    }
+  ]
+}
