@@ -1,0 +1,29 @@
+FAKE ARCHIVE - Numstore 1.0.0 Example Code
+
+This is a simulated examples archive for demonstration purposes.
+
+In a real deployment, this would contain:
+- examples/
+  - c/
+    - basic_usage.c
+    - advanced_queries.c
+    - multithreading.c
+  - python/
+    - quickstart.py
+    - data_analysis.py
+    - streaming.py
+  - README.md
+
+Example Usage (C):
+#include <numstore.h>
+
+int main() {
+    numstore_connection* conn = ns_connect("localhost", 7777);
+    ns_create_variable(conn, "temperature", NS_TYPE_FLOAT64);
+    double temps[] = {23.5, 24.1, 22.8};
+    ns_insert(conn, "temperature", temps, 3);
+    ns_close(conn);
+    return 0;
+}
+
+Version: 1.0.0

@@ -1,0 +1,19 @@
+FAKE ARCHIVE - Numstore 1.0.0 for Linux x86_64
+
+This is a simulated release archive for demonstration purposes.
+In a real deployment, this would be an actual tar.gz file containing:
+- libnumstore.so (shared library)
+- numstore.h (C header file)
+- README.md (installation instructions)
+- LICENSE (software license)
+- examples/ (example code directory)
+
+Installation (simulated):
+1. Extract: tar -xzf numstore-1.0.0-linux-x64.tar.gz
+2. Copy: sudo cp lib/libnumstore.so /usr/local/lib/
+3. Copy: sudo cp include/numstore.h /usr/local/include/
+4. Run: sudo ldconfig
+
+Version: 1.0.0
+Architecture: Linux x86_64
+Build Date: 2025-09-01

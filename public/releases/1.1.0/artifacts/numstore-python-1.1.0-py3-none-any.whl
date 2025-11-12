@@ -1,0 +1,38 @@
+FAKE WHEEL - Numstore Python Bindings 1.1.0
+
+This is a simulated Python wheel file for demonstration purposes.
+
+In a real deployment, this would be an actual .whl file installable via pip:
+  pip install numstore-python-1.1.0-py3-none-any.whl
+
+Package Contents (simulated):
+- numstore/
+  - __init__.py
+  - connection.py
+  - types.py
+  - streaming.py (NEW)
+  - analytics.py (NEW)
+  - exceptions.py
+- tests/
+- README.md
+- LICENSE
+
+Installation:
+  pip install numstore-python-1.1.0-py3-none-any.whl
+
+Usage:
+  import numstore
+  conn = numstore.connect('localhost:7777')
+  conn.create_variable('data', dtype='float64')
+  conn.insert('data', [1.0, 2.0, 3.0])
+  result = conn.query('data', start=0, end=10)
+  conn.close()
+
+Requirements:
+- Python 3.8+
+- numpy >= 1.20.0
+- requests >= 2.25.0
+
+Version: 1.1.0
+Python: 3.8+
+Platform: any

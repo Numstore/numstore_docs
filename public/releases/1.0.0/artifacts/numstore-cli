@@ -1,0 +1,4 @@
+#!/bin/bash
+# Placeholder for numstore-cli binary
+# Replace with actual CLI binary
+echo "Numstore CLI v1.0.0"

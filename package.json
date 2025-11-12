@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "preview": "vite preview",
-    "gendocs": "python3 ./scripts/generate_docs.py",
-    "predev" : "npm run gendocs",
+    "scan-releases": "python3 ./scripts/scan_releases.py",
+    "predev": "npm run scan-releases",
     "dev": "vite",
-    "prebuild": "npm run gendocs",
+    "prebuild": "npm run scan-releases",
     "build": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
