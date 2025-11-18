@@ -9,11 +9,11 @@
         NumStore
       </h1>
       <p class="text-2xl text-gray-700 mb-6">
-        A database purpose-built for numeric time-series data
+        Store uniform arrays as first-class citizens
       </p>
       <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-        Store millions of samples per second with sub-millisecond query latency.
-        10-100x faster than traditional databases for numeric workloads.
+        Time-series, images, tensors, sensor data—any uniform numeric array.
+        10-100x faster than SQL, simpler than HDF5, better than binary blobs.
       </p>
 
       <div class="flex justify-center gap-4 mb-8">
@@ -196,6 +196,89 @@ int main() {
       </div>
     </section>
 
+    <!-- ML/AI Storage Problem -->
+    <section class="py-16 bg-gradient-to-r from-purple-50 to-pink-50 -mx-10 px-10">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Storing AI Training Data? NumStore Solves That.</h2>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800">The Problem</h3>
+          <p class="text-gray-700 mb-4">
+            You're training an AI model and need to store millions of images, embeddings, or tensors. What do you do?
+          </p>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li class="flex items-start">
+              <span class="text-red-500 mr-2">✗</span>
+              <span><strong>Binary blobs in SQL?</strong> Terrible performance, massive overhead, slow queries.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-500 mr-2">✗</span>
+              <span><strong>One pixel per row?</strong> Absurd storage overhead and query complexity.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-500 mr-2">✗</span>
+              <span><strong>HDF5 files?</strong> Complex API, poor concurrency, limited query capabilities.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-500 mr-2">✗</span>
+              <span><strong>Filesystem?</strong> No indexing, no transactions, no efficient range queries.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold mb-4 text-green-800">NumStore's Solution</h3>
+          <p class="text-gray-700 mb-4">
+            <strong>Store uniform arrays as first-class citizens.</strong> Images are just 3D arrays (height × width × channels).
+            Embeddings are 1D/2D arrays. Tensors are N-dimensional arrays. NumStore handles them all natively.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2 text-gray-800">For Training Data:</h4>
+              <pre class="bg-gray-900 text-gray-100 p-4 rounded text-sm"><code># Store an image (224x224x3)
+image = load_image("cat.jpg")  # numpy array
+stream.write(image.flatten())
+
+# Batch write thousands of images
+images = load_batch(1000)  # (1000, 224, 224, 3)
+stream.write_batch(images)</code></pre>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2 text-gray-800">For Embeddings:</h4>
+              <pre class="bg-gray-900 text-gray-100 p-4 rounded text-sm"><code># Store CLIP embeddings (512-dim)
+embedding = model.encode(image)  # (512,)
+embedding_stream.write(embedding)
+
+# Query similar embeddings
+embeddings = stream.query_range(
+    start_id, end_id
+)  # Zero-copy NumPy array</code></pre>
+            </div>
+          </div>
+
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Native multi-dimensional array support</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Zero-copy reads directly into PyTorch/TensorFlow</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Efficient batch operations for data loaders</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Transaction support for versioned datasets</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Use Cases -->
     <section class="py-12 bg-blue-50 -mx-10 px-10">
       <h2 class="text-3xl font-bold text-center mb-12">Perfect For</h2>
@@ -314,6 +397,76 @@ int main() {
            class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-lg transition">
           Apply for Academic License
         </a>
+      </div>
+    </section>
+
+    <!-- Project Status -->
+    <section class="py-16 bg-yellow-50 -mx-10 px-10">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6">Project Status & Roadmap</h2>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm mb-6">
+          <h3 class="text-xl font-semibold mb-4 text-green-800">Core is Feature-Complete</h3>
+          <p class="text-gray-700 mb-4">
+            NumStore v1.0.0 is production-ready with a stable, battle-tested core:
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Contiguous storage model with R+ tree indexing</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Write-ahead logging and ACID transactions</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Python and Java bindings with zero-copy reads</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Proven in scientific instrumentation and industrial deployments</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold mb-4 text-blue-800">Active Development & Funding</h3>
+          <p class="text-gray-700 mb-4">
+            NumStore is actively developed and seeking funding to add highly-requested features:
+          </p>
+          <ul class="space-y-2 text-gray-700 mb-6">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span>Distributed/clustered deployment support</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span>Advanced compression strategies (delta encoding, quantization)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span>Additional language bindings (Go, Rust, JavaScript)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span>GPU integration for accelerated analytics</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span>Native cloud storage backends (S3, GCS, Azure)</span>
+            </li>
+          </ul>
+
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+            <p class="text-gray-800">
+              <strong>Interested in sponsoring development?</strong> NumStore accepts funding for specific
+              features, performance optimizations, and platform support. Contact
+              <a href="mailto:hello@numstore.dev" class="text-blue-600 hover:underline font-medium">hello@numstore.dev</a>
+              to discuss sponsorship opportunities.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
