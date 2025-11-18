@@ -533,6 +533,14 @@ embeddings = stream.query_range(
           <ul class="space-y-2 text-gray-700 mb-6">
             <li class="flex items-start">
               <span class="text-blue-600 mr-2">→</span>
+              <span>Real-time socket interface: TCP/UDP data ingestion with automatic stream creation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span>First-class plotting application: Built-in visualization for time-series exploration</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
               <span>Distributed/clustered deployment support</span>
             </li>
             <li class="flex items-start">
