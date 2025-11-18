@@ -34,10 +34,10 @@ const deliverables = [
 
     <!-- Academic Consulting Notice ----------------------------------------->
     <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 space-y-2">
-      <h2 class="text-lg font-semibold text-blue-900">🎓 Academic & Research Consulting</h2>
+      <h2 class="text-lg font-semibold text-blue-900">Academic & Research Consulting</h2>
       <p class="text-gray-700">
         Research institutions qualify for <strong>discounted consulting rates</strong> and flexible engagement
-        models. We've helped labs optimize data collection pipelines, implement custom storage strategies
+        models. I've helped labs optimize data collection pipelines, implement custom storage strategies
         for experimental data, and scale NumStore for large-scale scientific computing.
       </p>
       <p class="text-sm text-gray-700">
@@ -47,7 +47,7 @@ const deliverables = [
     </section>
 
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">What we do</h2>
+      <h2 class="text-xl font-semibold">What I do</h2>
       <ul class="list-disc pl-6 space-y-1">
         <li v-for="(item, i) in offerings" :key="i">{{ item }}</li>
       </ul>

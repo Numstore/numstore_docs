@@ -32,11 +32,22 @@ const timeline = [
   <main class="max-w-3xl mx-auto px-6 py-12 space-y-10">
     <!-- Header -->
     <section class="space-y-2">
-      <h1 class="text-3xl font-bold">About The Company</h1>
+      <h1 class="text-3xl font-bold">About</h1>
       <p class="text-gray-700">
-        The Company builds dependable software for numeric and systems workloads, including the
-        NumStore database. We focus on correctness, performance, and developer ergonomics—with a
-        special commitment to advancing academic research and scientific computing.
+        I'm building NumStore as a solo project—dependable software for numeric and systems workloads.
+        My focus is on correctness, performance, and developer ergonomics, with a special commitment
+        to advancing academic research and scientific computing.
+      </p>
+    </section>
+
+    <!-- Background -->
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Background</h2>
+      <p class="text-gray-700">
+        My background is in applied mathematics and computer science, with experience in low-level systems
+        programming and data structure design. I built NumStore to solve a problem I kept encountering:
+        traditional databases aren't designed for high-throughput numeric time-series data. The result is
+        a purpose-built database that prioritizes performance and simplicity.
       </p>
     </section>
 
@@ -44,23 +55,23 @@ const timeline = [
     <section class="space-y-3 bg-blue-50 p-6 rounded-lg border border-blue-200">
       <h2 class="text-xl font-semibold text-blue-900">Academic Research Program</h2>
       <p class="text-gray-700">
-        NumStore was built with researchers in mind. We believe in supporting the scientific community
+        NumStore was built with researchers in mind. I believe in supporting the scientific community
         and understand the unique constraints of academic environments.
       </p>
       <ul class="list-disc pl-6 space-y-1">
         <li><strong>Free for qualifying educational projects</strong> — Students and academic labs can use NumStore at no cost for research purposes</li>
         <li><strong>Heavily discounted licenses</strong> — Research institutions receive significant pricing reductions</li>
-        <li><strong>Direct technical support</strong> — Academic users get priority access to our engineering team</li>
-        <li><strong>Co-development opportunities</strong> — We partner with research groups to add features that advance science</li>
+        <li><strong>Direct technical support</strong> — Academic users get direct access for technical questions</li>
+        <li><strong>Co-development opportunities</strong> — I'm open to partnering with research groups to add features that advance science</li>
       </ul>
       <p class="text-sm text-gray-700">
-        Contact us at <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a> to discuss your research needs and eligibility.
+        Contact me at <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a> to discuss your research needs and eligibility.
       </p>
     </section>
 
-    <!-- What we do -->
+    <!-- What I do -->
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">What we do</h2>
+      <h2 class="text-xl font-semibold">What I do</h2>
       <ul class="list-disc pl-6 space-y-1">
         <li v-for="(h, i) in highlights" :key="i">{{ h }}</li>
       </ul>
@@ -73,7 +84,7 @@ const timeline = [
         <li v-for="(o, i) in offerings" :key="i">{{ o }}</li>
       </ul>
       <p class="text-sm text-gray-700">
-        See <a class="underline" href="/services/enterprise_support">Enterprise Support</a>,
+        See <a class="underline" href="/services/enterprise_support">Support</a>,
         <a class="underline" href="/services/consulting">Consulting</a>, and
         <a class="underline" href="/services/training">Training</a> for details.
       </p>
@@ -81,7 +92,7 @@ const timeline = [
 
     <!-- Values -->
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">Our values</h2>
+      <h2 class="text-xl font-semibold">Values</h2>
       <ul class="list-disc pl-6 space-y-1">
         <li v-for="(v, i) in values" :key="i">{{ v }}</li>
       </ul>
@@ -101,13 +112,13 @@ const timeline = [
     <section class="space-y-2">
       <h2 class="text-xl font-semibold">Contact</h2>
       <ul class="list-disc pl-6 space-y-1">
-        <li>Email: <a class="underline" href="mailto:hello@thecompany.com">hello@thecompany.com</a></li>
+        <li>Email: <a class="underline" href="mailto:hello@numstore.dev">hello@numstore.dev</a></li>
         <li>General inquiries: <a class="underline" href="/about/contact">/about/contact</a></li>
         <li>Docs & updates: <a class="underline" href="/resources/documentation">/resources/documentation</a> ·
           <a class="underline" href="/blog">/blog</a></li>
       </ul>
       <p class="text-xs text-gray-600">
-        For security issues, please email <a class="underline" href="mailto:security@thecompany.com">security@thecompany.com</a>.
+        For security issues, please email <a class="underline" href="mailto:security@numstore.dev">security@numstore.dev</a>.
       </p>
     </section>
   </main>

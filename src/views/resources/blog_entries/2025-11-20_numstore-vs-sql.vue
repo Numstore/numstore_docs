@@ -217,7 +217,7 @@ while (collecting) {
 
     <p>
       SQL databases are incredible for what they do—relational data, ACID transactions, flexible queries, and
-      decades of proven reliability. We use PostgreSQL ourselves for user accounts, configuration, and metadata.
+      decades of proven reliability. I use PostgreSQL for user accounts, configuration, and metadata.
     </p>
 
     <p>

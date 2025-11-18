@@ -89,15 +89,15 @@ import NavFooter from "@/views/nav/NavFooter.vue";
         <h2 class="text-xl font-bold text-gray-800 mb-4">Why Numstore?</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
           <div class="flex flex-col">
-            <div class="font-semibold text-blue-700 mb-2">🔧 Pure C, Zero Dependencies</div>
+            <div class="font-semibold text-blue-700 mb-2">Pure C, Zero Dependencies</div>
             <p class="text-gray-700">Embedded database written in 100% dependency-free C. Integrate into any language—Python, Java, Go, Rust, or your custom stack.</p>
           </div>
           <div class="flex flex-col">
-            <div class="font-semibold text-blue-700 mb-2">⚡ Early Adoption Advantage</div>
-            <p class="text-gray-700">Join now during early development. Influence feature roadmap, get direct access to maintainers, and shape the future of numeric data storage.</p>
+            <div class="font-semibold text-blue-700 mb-2">Early Adoption Advantage</div>
+            <p class="text-gray-700">Join now during early development. Influence feature roadmap, get direct access to the maintainer, and shape the future of numeric data storage.</p>
           </div>
           <div class="flex flex-col">
-            <div class="font-semibold text-blue-700 mb-2">🚀 Extreme Performance</div>
+            <div class="font-semibold text-blue-700 mb-2">Extreme Performance</div>
             <p class="text-gray-700">Optimized for time-series and numeric workloads. <strong>10-100x faster</strong> than traditional oscilloscope data readers and general-purpose databases for numeric operations.</p>
           </div>
         </div>

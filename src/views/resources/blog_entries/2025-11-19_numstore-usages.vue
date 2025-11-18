@@ -201,8 +201,8 @@
     </p>
 
     <p>
-      Have questions about whether NumStore fits your use case? Email us at
-      <a href="mailto:hello@numstore.dev">hello@numstore.dev</a> or check out our
+      Have questions about whether NumStore fits your use case? Email me at
+      <a href="mailto:hello@numstore.dev">hello@numstore.dev</a> or check out my
       <a href="/resources/documentation">documentation</a>.
     </p>
   </article>

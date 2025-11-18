@@ -5,7 +5,7 @@
 
     <p class="lead text-lg text-gray-700">
       NumStore's contiguous data model is the secret to its performance. By storing numeric arrays
-      sequentially in memory and on disk, we unlock zero-copy reads, cache efficiency, and 10-100x
+      sequentially in memory and on disk, I unlock zero-copy reads, cache efficiency, and 10-100x
       faster queries compared to traditional row-based databases.
     </p>
 
@@ -338,7 +338,7 @@ for (size_t i = 0; i < count; i += 8) {
 
     <p>
       NumStore's contiguous data model is the foundation of its performance. By storing numeric
-      arrays sequentially and returning zero-copy pointers, we achieve:
+      arrays sequentially and returning zero-copy pointers, I achieve:
     </p>
 
     <ul>

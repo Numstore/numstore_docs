@@ -16,7 +16,7 @@
 
     <ol>
       <li><strong>Contiguous storage:</strong> Numeric arrays should be stored sequentially for cache efficiency, zero-copy reads, and fast range queries</li>
-      <li><strong>Efficient indexing:</strong> We need O(log n) time to find specific time ranges without scanning the entire dataset</li>
+      <li><strong>Efficient indexing:</strong> I need O(log n) time to find specific time ranges without scanning the entire dataset</li>
     </ol>
 
     <p>
@@ -103,7 +103,7 @@ Chunk 2: [2.1, 2.2, 2.3, 2.4, ..., 3.0]  // 10,000 samples, contiguous
     </p>
 
     <p>
-      For time-series data, we use R+ trees to index <strong>temporal ranges</strong>—treating time as a 1D spatial dimension.
+      For time-series data, I use R+ trees to index <strong>temporal ranges</strong>—treating time as a 1D spatial dimension.
     </p>
 
     <h3>Why R+ Trees Instead of B-Trees?</h3>
@@ -180,7 +180,7 @@ Chunk 2: [2.1, 2.2, 2.3, 2.4, ..., 3.0]  // 10,000 samples, contiguous
       <li><strong>Prune non-overlapping children:</strong> Skip subtrees whose bounding boxes don't overlap the query range</li>
       <li><strong>Descend recursively:</strong> Visit only children whose ranges overlap [T=1000, T=2000]</li>
       <li><strong>Reach leaf nodes:</strong> Return pointers to rope chunks that contain matching samples</li>
-      <li><strong>Read contiguous data:</strong> Each rope chunk is contiguous, so we read sequential blocks</li>
+      <li><strong>Read contiguous data:</strong> Each rope chunk is contiguous, so I read sequential blocks</li>
     </ol>
 
     <p>

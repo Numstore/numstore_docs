@@ -4,7 +4,7 @@
     <h1>{{ meta.title }}</h1>
 
     <p class="lead text-lg text-gray-700">
-      Today, we're excited to announce a major shift in how we're positioning NumStore:
+      Today, I'm excited to announce a major shift in how I'm positioning NumStore:
       as a database purpose-built for academic research and scientific computing—while
       remaining powerful enough for demanding enterprise workloads.
     </p>
@@ -30,30 +30,30 @@
     </ul>
 
     <p>
-      NumStore delivers on all of these—and we want to make it accessible to every researcher
+      NumStore delivers on all of these—and I want to make it accessible to every researcher
       who could benefit from it.
     </p>
 
     <h2>Academic Research Program</h2>
 
-    <p>Starting today, we're launching our Academic Research Program with:</p>
+    <p>Starting today, I'm launching my Academic Research Program with:</p>
 
     <ul>
       <li><strong>Free licenses</strong> for qualifying student projects and academic labs</li>
       <li><strong>Heavily discounted pricing</strong> for research institutions (up to 90% off commercial rates)</li>
-      <li><strong>Direct technical support</strong> with priority access to our engineering team</li>
+      <li><strong>Direct technical support</strong> with priority access to me directly</li>
       <li><strong>Co-development opportunities</strong> for research groups with specialized needs</li>
     </ul>
 
     <p>
-      We believe groundbreaking research shouldn't be limited by software licensing costs.
-      If you're using NumStore to advance science, we want to support you.
+      I believe groundbreaking research shouldn't be limited by software licensing costs.
+      If you're using NumStore to advance science, I want to support you.
     </p>
 
     <h2>Built for Researchers, Scaled for Business</h2>
 
     <p>
-      While we're emphasizing academic use, NumStore remains a production-ready database for
+      While I'm emphasizing academic use, NumStore remains a production-ready database for
       commercial applications. The same features that make it ideal for research—high performance,
       reliability, and flexibility—make it excellent for:
     </p>
@@ -77,7 +77,7 @@
 
     <h3>2. Early Adoption Advantage</h3>
     <p>
-      We're in the early stages of development, which is actually an opportunity. Join now and:
+      I'm in the early stages of development, which is actually an opportunity. Join now and:
     </p>
     <ul>
       <li>Influence the feature roadmap based on your research needs</li>
@@ -112,7 +112,7 @@
     </ul>
 
     <p>
-      We'll be publishing detailed blog posts about each of these architectural decisions in
+      I'll be publishing detailed blog posts about each of these architectural decisions in
       the coming weeks.
     </p>
 
@@ -123,7 +123,7 @@
     </p>
 
     <ol>
-      <li><strong>Download NumStore</strong> from our <a href="/downloads/current">downloads page</a></li>
+      <li><strong>Download NumStore</strong> from my <a href="/downloads/current">downloads page</a></li>
       <li><strong>Check the documentation</strong> for installation and quickstart guides</li>
       <li><strong>Apply for academic access</strong> by emailing <a href="mailto:academic@numstore.dev">academic@numstore.dev</a> with:
         <ul>
@@ -137,14 +137,14 @@
     <h2>Looking Forward</h2>
 
     <p>
-      This is just the beginning. We're committed to building the best database for numeric
-      and time-series data, and we want to do it in partnership with the research community.
+      This is just the beginning. I'm committed to building the best database for numeric
+      and time-series data, and I want to do it in partnership with the research community.
     </p>
 
     <p>
       Whether you're running a physics experiment, collecting environmental data, training
       machine learning models, or building the next generation of scientific instruments,
-      we'd love to hear from you.
+      I'd love to hear from you.
     </p>
 
     <p>
