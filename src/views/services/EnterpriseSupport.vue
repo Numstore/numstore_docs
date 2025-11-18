@@ -9,6 +9,13 @@ type Plan = {
 
 const plans: Plan[] = [
   {
+    name: "Academic Research",
+    bestFor: "Universities, research labs, and educational institutions",
+    response: "1-2 business days for technical questions",
+    hours: "Mon–Fri, 9am–6pm (your local time)",
+    channels: ["Email", "Academic Portal"]
+  },
+  {
     name: "Standard",
     bestFor: "Teams adopting NumStore in non-critical workflows",
     response: "Business-hours response, next-business-day target",
@@ -71,10 +78,24 @@ const priorities = [
   <main class="max-w-3xl mx-auto px-6 py-12 space-y-10">
     <!-- Header -------------------------------------------------------------->
     <section class="space-y-2">
-      <h1 class="text-3xl font-bold">Enterprise Support</h1>
+      <h1 class="text-3xl font-bold">Support</h1>
       <p class="text-gray-600">
         Keep NumStore reliable in production with guaranteed response targets, escalation paths,
-        and direct access to engineers.
+        and direct support access.
+      </p>
+    </section>
+
+    <!-- Academic Notice ---------------------------------------------------->
+    <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 space-y-2">
+      <h2 class="text-lg font-semibold text-blue-900">Academic & Research Institutions</h2>
+      <p class="text-gray-700">
+        I offer <strong>free or heavily discounted</strong> support plans for qualifying academic institutions,
+        research labs, and educational projects. The Academic Research plan provides technical assistance
+        tailored to the unique needs of scientific computing and research workflows.
+      </p>
+      <p class="text-sm text-gray-700">
+        Contact <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
+        to discuss your research project and eligibility.
       </p>
     </section>
 
@@ -138,7 +159,7 @@ const priorities = [
     <section class="space-y-2">
       <h2 class="text-xl font-semibold">Get started</h2>
       <p class="text-gray-700">
-        Tell us about your deployment, SLA needs, and timeline. We’ll propose the right plan and pricing.
+        Tell me about your deployment, SLA needs, and timeline. I'll propose the right plan and pricing.
       </p>
       <ul class="list-disc pl-6 space-y-1">
         <li>
@@ -162,13 +183,13 @@ const priorities = [
       <details>
         <summary class="cursor-pointer font-medium">Do you offer custom SLAs?</summary>
         <div class="mt-2 text-gray-700">
-          Yes. Enterprise plans can include custom hours, contacts, and response targets. Let us know your requirements.
+          Yes. Enterprise plans can include custom hours, contacts, and response targets. Let me know your requirements.
         </div>
       </details>
       <details>
         <summary class="cursor-pointer font-medium">What versions are supported?</summary>
         <div class="mt-2 text-gray-700">
-          Current and LTS releases. We backport critical fixes to supported LTS branches.
+          Current and LTS releases. I backport critical fixes to supported LTS branches.
         </div>
       </details>
       <details>
