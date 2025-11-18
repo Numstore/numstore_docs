@@ -71,15 +71,19 @@
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
-              <span>Sustained write rates exceeding 1M samples/second</span>
+              <span>Oscilloscope-speed data storage: 1M+ samples/second sustained</span>
             </li>
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
-              <span>O(log n) range queries with R+ tree spatial indexing</span>
+              <span>Real-time operation with sub-millisecond append latency</span>
             </li>
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
-              <span>ACID transactions with write-ahead logging</span>
+              <span>Crash recovery with write-ahead logging (WAL)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Both append and insert operations supported</span>
             </li>
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
@@ -89,15 +93,19 @@
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
+              <span>O(log n) range queries with R+ tree spatial indexing</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>ACID transactions for data consistency</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
               <span>Contiguous storage: 10-20x lower overhead than SQL</span>
             </li>
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
               <span>Embedded deployment on edge/IoT devices</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-green-600 mr-2">✓</span>
-              <span>Battle-tested for scientific instrumentation</span>
             </li>
             <li class="flex items-start">
               <span class="text-green-600 mr-2">✓</span>
@@ -193,6 +201,93 @@ int main() {
            class="text-blue-600 hover:text-blue-800 font-medium">
           See full tutorial with ML integration →
         </a>
+      </div>
+    </section>
+
+    <!-- Complexity Table -->
+    <section class="py-16 bg-gray-50 -mx-10 px-10">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6">Operation Complexity</h2>
+        <p class="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
+          Predictable performance characteristics for all operations. NumStore provides O(log n) complexity
+          for most operations—far better than O(n) scans in flat files or append-only logs.
+        </p>
+
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+          <table class="w-full">
+            <thead class="bg-gray-800 text-white">
+              <tr>
+                <th class="px-6 py-4 text-left">Operation</th>
+                <th class="px-6 py-4 text-left">Time Complexity</th>
+                <th class="px-6 py-4 text-left">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Append</td>
+                <td class="px-6 py-4 font-mono text-green-600">O(1) amortized</td>
+                <td class="px-6 py-4 text-gray-700">Write to end of stream (most common operation)</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Insert (middle)</td>
+                <td class="px-6 py-4 font-mono text-blue-600">O(log n + k)</td>
+                <td class="px-6 py-4 text-gray-700">Insert k elements at arbitrary position. log n for index lookup, k for data shift</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Range query</td>
+                <td class="px-6 py-4 font-mono text-green-600">O(log n + k)</td>
+                <td class="px-6 py-4 text-gray-700">Retrieve k elements within time range. log n tree traversal + k sequential read</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Point query</td>
+                <td class="px-6 py-4 font-mono text-green-600">O(log n)</td>
+                <td class="px-6 py-4 text-gray-700">Find single element by timestamp or index</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Update</td>
+                <td class="px-6 py-4 font-mono text-blue-600">O(log n)</td>
+                <td class="px-6 py-4 text-gray-700">Modify element at specific position. Logged via WAL for crash recovery</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Delete range</td>
+                <td class="px-6 py-4 font-mono text-blue-600">O(log n + k)</td>
+                <td class="px-6 py-4 text-gray-700">Remove k elements from stream. Mark deleted in index, reclaim in compaction</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Scan (full)</td>
+                <td class="px-6 py-4 font-mono text-yellow-600">O(n)</td>
+                <td class="px-6 py-4 text-gray-700">Sequential scan of all data. Optimized via contiguous storage (cache-friendly)</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Commit transaction</td>
+                <td class="px-6 py-4 font-mono text-green-600">O(1)</td>
+                <td class="px-6 py-4 text-gray-700">Flush WAL to disk. Ensures durability and crash recovery</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-6 bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+          <h3 class="font-semibold text-lg mb-2 text-blue-900">Why This Matters</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span><strong>Append-heavy workloads:</strong> O(1) amortized means sustained 1M+/sec write rates</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span><strong>Random access:</strong> O(log n) beats O(n) scans in flat files by orders of magnitude</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span><strong>Range queries:</strong> Time-range lookups are O(log n + k), not O(n) like scanning</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">→</span>
+              <span><strong>Inserts supported:</strong> Unlike append-only logs, can insert in middle with O(log n + k)</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
