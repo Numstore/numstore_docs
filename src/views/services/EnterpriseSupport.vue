@@ -9,6 +9,13 @@ type Plan = {
 
 const plans: Plan[] = [
   {
+    name: "Academic Research",
+    bestFor: "Universities, research labs, and educational institutions",
+    response: "1-2 business days for technical questions",
+    hours: "Mon–Fri, 9am–6pm (your local time)",
+    channels: ["Email", "Academic Portal"]
+  },
+  {
     name: "Standard",
     bestFor: "Teams adopting NumStore in non-critical workflows",
     response: "Business-hours response, next-business-day target",
@@ -75,6 +82,20 @@ const priorities = [
       <p class="text-gray-600">
         Keep NumStore reliable in production with guaranteed response targets, escalation paths,
         and direct access to engineers.
+      </p>
+    </section>
+
+    <!-- Academic Notice ---------------------------------------------------->
+    <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 space-y-2">
+      <h2 class="text-lg font-semibold text-blue-900">🎓 Academic & Research Institutions</h2>
+      <p class="text-gray-700">
+        We offer <strong>free or heavily discounted</strong> support plans for qualifying academic institutions,
+        research labs, and educational projects. Our Academic Research plan provides technical assistance
+        tailored to the unique needs of scientific computing and research workflows.
+      </p>
+      <p class="text-sm text-gray-700">
+        Contact <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
+        to discuss your research project and eligibility.
       </p>
     </section>
 
