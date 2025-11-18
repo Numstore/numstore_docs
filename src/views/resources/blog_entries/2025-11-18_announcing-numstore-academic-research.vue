@@ -4,168 +4,144 @@
     <h1>{{ meta.title }}</h1>
 
     <p class="lead text-lg text-gray-700">
-      Today, I'm excited to announce a major shift in how I'm positioning NumStore:
-      as a database purpose-built for academic research and scientific computing—while
-      remaining powerful enough for demanding enterprise workloads.
+      NumStore is a specialized database system designed for numeric time-series data and scientific computing workloads.
+      This document outlines the system architecture, academic licensing programs, and deployment considerations.
     </p>
 
-    <h2>Why Academic Research?</h2>
+    <h2>Design Motivation</h2>
 
     <p>
-      NumStore was born from a simple observation: researchers working with time-series data,
-      sensor readings, experimental measurements, and numeric datasets face unique challenges
-      that traditional databases weren't designed to solve.
-    </p>
-
-    <p>
-      Whether you're capturing oscilloscope traces, storing particle collision data, recording
-      environmental sensor readings, or managing large-scale simulation outputs, you need:
+      Traditional relational databases introduce significant overhead when handling high-frequency numeric data streams.
+      NumStore addresses specific limitations in conventional database systems for applications including:
     </p>
 
     <ul>
-      <li><strong>Extreme write performance</strong> for continuous data collection</li>
-      <li><strong>Efficient numeric storage</strong> without the overhead of general-purpose formats</li>
-      <li><strong>Simple integration</strong> into existing research workflows and languages</li>
-      <li><strong>Reliability</strong> you can trust with irreplaceable experimental data</li>
+      <li>High-frequency data acquisition from instrumentation (oscilloscopes, sensors, detectors)</li>
+      <li>Experimental measurement storage with temporal ordering requirements</li>
+      <li>Large-scale simulation output management</li>
+      <li>Time-series analysis for scientific computing</li>
     </ul>
 
     <p>
-      NumStore delivers on all of these—and I want to make it accessible to every researcher
-      who could benefit from it.
+      The system provides:
     </p>
-
-    <h2>Academic Research Program</h2>
-
-    <p>Starting today, I'm launching my Academic Research Program with:</p>
 
     <ul>
-      <li><strong>Free licenses</strong> for qualifying student projects and academic labs</li>
-      <li><strong>Heavily discounted pricing</strong> for research institutions (up to 90% off commercial rates)</li>
-      <li><strong>Direct technical support</strong> with priority access to me directly</li>
-      <li><strong>Co-development opportunities</strong> for research groups with specialized needs</li>
+      <li>Sustained write performance exceeding 1M samples/second</li>
+      <li>Contiguous storage eliminating per-sample overhead</li>
+      <li>Language bindings for Python, Java, and C</li>
+      <li>ACID transaction guarantees with write-ahead logging</li>
+    </ul>
+
+    <h2>Academic Licensing</h2>
+
+    <p>NumStore provides academic licensing options:</p>
+
+    <ul>
+      <li>No-cost licenses for student projects and academic research labs</li>
+      <li>Discounted institutional licenses for universities (up to 90% reduction from commercial rates)</li>
+      <li>Technical support for academic deployments</li>
+      <li>Collaboration on domain-specific features</li>
     </ul>
 
     <p>
-      I believe groundbreaking research shouldn't be limited by software licensing costs.
-      If you're using NumStore to advance science, I want to support you.
+      Academic licensing inquiries: <a href="mailto:academic@numstore.dev">academic@numstore.dev</a>
     </p>
 
-    <h2>Built for Researchers, Scaled for Business</h2>
+    <h2>Commercial Applications</h2>
 
     <p>
-      While I'm emphasizing academic use, NumStore remains a production-ready database for
-      commercial applications. The same features that make it ideal for research—high performance,
-      reliability, and flexibility—make it excellent for:
+      NumStore supports both research and production deployments. Commercial use cases include:
     </p>
 
     <ul>
       <li>IoT and industrial sensor data collection</li>
-      <li>Financial time-series and market data</li>
+      <li>Financial time-series and market data storage</li>
       <li>Telemetry and observability systems</li>
-      <li>Machine learning feature stores and training data</li>
-      <li>High-frequency trading and analytics pipelines</li>
+      <li>Machine learning feature stores</li>
+      <li>High-frequency trading data pipelines</li>
     </ul>
 
-    <h2>What Makes NumStore Different</h2>
+    <h2>Technical Architecture</h2>
 
-    <h3>1. Pure C, Zero Dependencies</h3>
+    <h3>1. Dependency-Free C Implementation</h3>
     <p>
-      NumStore is written in 100% dependency-free C. This means you can embed it in any
-      environment—Python, Java, Go, Rust, MATLAB, R, or custom C/C++ applications. No complex
-      runtime dependencies, no version conflicts, just clean integration.
+      NumStore is implemented in standard C with no external dependencies. Language bindings
+      provide access through a stable C API, enabling integration with Python, Java, Go, Rust,
+      MATLAB, R, and other environments.
     </p>
 
-    <h3>2. Early Adoption Advantage</h3>
+    <h3>2. Contiguous Storage Model</h3>
     <p>
-      I'm in the early stages of development, which is actually an opportunity. Join now and:
+      Numeric arrays are stored in contiguous memory blocks, enabling:
     </p>
     <ul>
-      <li>Influence the feature roadmap based on your research needs</li>
-      <li>Get direct access to maintainers and engineers</li>
-      <li>Shape the future of numeric data storage</li>
-      <li>Establish yourself as an early expert in the ecosystem</li>
+      <li>Zero-copy data access for reduced latency</li>
+      <li>Efficient cache utilization through sequential access patterns</li>
+      <li>SIMD vectorization for analytical operations</li>
+      <li>Direct memory mapping for high-performance queries</li>
     </ul>
 
-    <h3>3. Extreme Performance</h3>
+    <h3>3. Performance Characteristics</h3>
     <p>
-      NumStore is optimized for what researchers do most: collecting and querying numeric data.
-      In benchmarks against traditional oscilloscope data readers and general-purpose databases,
-      NumStore shows <strong>10-100x performance improvements</strong> for numeric-heavy workloads.
+      Benchmark results show 10-100x performance improvements over row-based databases for
+      numeric-heavy workloads. For data acquisition at 1 MHz sampling rates, NumStore maintains
+      sub-millisecond write latency where traditional databases experience multi-second delays
+      or dropped samples.
     </p>
 
-    <p>
-      For a typical use case—streaming 1M samples/second from a data acquisition system—NumStore
-      can ingest and index data with sub-millisecond latency while traditional solutions struggle
-      with multi-second delays or dropped samples.
-    </p>
+    <h2>System Components</h2>
 
-    <h2>Technical Foundation</h2>
-
-    <p>NumStore is built on solid computer science fundamentals:</p>
+    <p>NumStore implements:</p>
 
     <ul>
-      <li><strong>R+ tree engine</strong> with O(log n) insert and search operations</li>
-      <li><strong>Rope-based data structure</strong> for efficient contiguous numeric storage</li>
-      <li><strong>Write-ahead logging (WAL)</strong> with two-phase commit semantics</li>
-      <li><strong>Contiguous data model</strong> optimized for numeric arrays and time-series</li>
-      <li><strong>Full rollback support</strong> for experimental workflows</li>
+      <li><strong>R+ tree spatial indexing</strong> — O(log n) range queries on temporal data</li>
+      <li><strong>Rope-based data structures</strong> — Efficient contiguous array management</li>
+      <li><strong>Write-ahead logging</strong> — ACID guarantees with two-phase commit</li>
+      <li><strong>Contiguous data model</strong> — Optimized for numeric arrays and time-series</li>
+      <li><strong>Transaction support</strong> — Full rollback capabilities for experimental workflows</li>
     </ul>
 
     <p>
-      I'll be publishing detailed blog posts about each of these architectural decisions in
-      the coming weeks.
+      Additional technical documentation available in the architecture and implementation blog posts.
     </p>
 
-    <h2>Get Started Today</h2>
+    <h2>Getting Started</h2>
 
     <p>
-      Ready to try NumStore in your research? Here's how to get started:
+      To evaluate NumStore:
     </p>
 
     <ol>
-      <li><strong>Download NumStore</strong> from my <a href="/downloads/current">downloads page</a></li>
-      <li><strong>Check the documentation</strong> for installation and quickstart guides</li>
-      <li><strong>Apply for academic access</strong> by emailing <a href="mailto:academic@numstore.dev">academic@numstore.dev</a> with:
+      <li>Download from <a href="/downloads/current">downloads page</a></li>
+      <li>Review documentation for installation and API reference</li>
+      <li>For academic licensing, contact <a href="mailto:academic@numstore.dev">academic@numstore.dev</a> with:
         <ul>
-          <li>Your institution and research area</li>
-          <li>A brief description of your use case</li>
-          <li>Your timeline and requirements</li>
+          <li>Institution and research area</li>
+          <li>Use case description</li>
+          <li>Deployment timeline</li>
         </ul>
       </li>
     </ol>
 
-    <h2>Looking Forward</h2>
+    <h2>Support and Contact</h2>
 
     <p>
-      This is just the beginning. I'm committed to building the best database for numeric
-      and time-series data, and I want to do it in partnership with the research community.
+      For technical questions and deployment assistance:
     </p>
 
-    <p>
-      Whether you're running a physics experiment, collecting environmental data, training
-      machine learning models, or building the next generation of scientific instruments,
-      I'd love to hear from you.
-    </p>
-
-    <p>
-      Welcome to NumStore. Let's advance science together.
-    </p>
-
-    <hr class="my-8">
-
-    <p class="text-sm text-gray-600">
-      <strong>Contact:</strong><br>
-      Academic inquiries: <a href="mailto:academic@numstore.dev">academic@numstore.dev</a><br>
-      General questions: <a href="mailto:hello@numstore.dev">hello@numstore.dev</a><br>
-      Enterprise: <a href="mailto:enterprise@numstore.dev">enterprise@numstore.dev</a>
-    </p>
+    <ul>
+      <li>General inquiries: <a href="mailto:hello@numstore.dev">hello@numstore.dev</a></li>
+      <li>Academic licensing: <a href="mailto:academic@numstore.dev">academic@numstore.dev</a></li>
+      <li>Commercial support: <a href="mailto:enterprise@numstore.dev">enterprise@numstore.dev</a></li>
+    </ul>
   </article>
 </template>
 
 
 <script lang="ts" setup>
 const meta = {
-  title: 'Announcing NumStore: Built for Academic Research, Scaled for Business',
+  title: 'NumStore: Database System for Numeric Time-Series Data',
   date: '2025-11-18',
 }
 </script>

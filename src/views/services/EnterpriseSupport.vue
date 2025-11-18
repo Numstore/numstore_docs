@@ -78,24 +78,23 @@ const priorities = [
   <main class="max-w-3xl mx-auto px-6 py-12 space-y-10">
     <!-- Header -------------------------------------------------------------->
     <section class="space-y-2">
-      <h1 class="text-3xl font-bold">Support</h1>
+      <h1 class="text-3xl font-bold">Commercial Support</h1>
       <p class="text-gray-600">
-        Keep NumStore reliable in production with guaranteed response targets, escalation paths,
-        and direct support access.
+        NumStore offers commercial support contracts with defined service level agreements,
+        technical assistance for production deployments, and access to maintenance updates.
       </p>
     </section>
 
     <!-- Academic Notice ---------------------------------------------------->
     <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 space-y-2">
-      <h2 class="text-lg font-semibold text-blue-900">Academic & Research Institutions</h2>
+      <h2 class="text-lg font-semibold text-blue-900">Academic Support Programs</h2>
       <p class="text-gray-700">
-        I offer <strong>free or heavily discounted</strong> support plans for qualifying academic institutions,
-        research labs, and educational projects. The Academic Research plan provides technical assistance
-        tailored to the unique needs of scientific computing and research workflows.
+        No-cost and discounted support plans are available for academic institutions,
+        research laboratories, and educational projects. Academic support includes
+        technical assistance for scientific computing and data acquisition systems.
       </p>
       <p class="text-sm text-gray-700">
-        Contact <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
-        to discuss your research project and eligibility.
+        Academic support inquiries: <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
       </p>
     </section>
 
@@ -157,9 +156,10 @@ const priorities = [
 
     <!-- Contact CTA --------------------------------------------------------->
     <section class="space-y-2">
-      <h2 class="text-xl font-semibold">Get started</h2>
+      <h2 class="text-xl font-semibold">Support Inquiries</h2>
       <p class="text-gray-700">
-        Tell me about your deployment, SLA needs, and timeline. I'll propose the right plan and pricing.
+        For information on support contracts, include details about your deployment environment,
+        SLA requirements, and timeline.
       </p>
       <ul class="list-disc pl-6 space-y-1">
         <li>
@@ -167,11 +167,11 @@ const priorities = [
           <a class="underline" href="mailto:support@numstore.dev">support@numstore.dev</a>
         </li>
         <li>
-          Book a call:
+          Contact form:
           <a class="underline" href="/about/contact">/about/contact</a>
         </li>
         <li>
-          Existing customer portal:
+          Documentation:
           <a class="underline" href="/resources/documentation">/resources/documentation</a>
         </li>
       </ul>
@@ -181,22 +181,23 @@ const priorities = [
     <section class="space-y-3">
       <h2 class="text-xl font-semibold">FAQ</h2>
       <details>
-        <summary class="cursor-pointer font-medium">Do you offer custom SLAs?</summary>
+        <summary class="cursor-pointer font-medium">Are custom SLAs available?</summary>
         <div class="mt-2 text-gray-700">
-          Yes. Enterprise plans can include custom hours, contacts, and response targets. Let me know your requirements.
+          Enterprise support contracts can include custom response times, availability hours, and escalation procedures.
         </div>
       </details>
       <details>
         <summary class="cursor-pointer font-medium">What versions are supported?</summary>
         <div class="mt-2 text-gray-700">
-          Current and LTS releases. I backport critical fixes to supported LTS branches.
+          Support is provided for current releases and designated long-term support (LTS) branches.
+          Critical fixes are backported to supported LTS versions.
         </div>
       </details>
       <details>
-        <summary class="cursor-pointer font-medium">How do I escalate a P1?</summary>
+        <summary class="cursor-pointer font-medium">How are critical issues escalated?</summary>
         <div class="mt-2 text-gray-700">
-          Enterprise customers receive an on-call hotline and Slack Connect channel. Use either and mark the ticket as
-          P1.
+          Enterprise support contracts include on-call access and dedicated communication channels.
+          P1 issues can be escalated through the support hotline or Slack Connect channel.
         </div>
       </details>
     </section>

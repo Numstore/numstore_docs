@@ -25,29 +25,28 @@ const deliverables = [
 <template>
   <main class="max-w-3xl mx-auto px-6 py-12 space-y-10">
     <section class="space-y-2">
-      <h1 class="text-3xl font-bold">Consulting</h1>
+      <h1 class="text-3xl font-bold">Consulting Services</h1>
       <p class="text-gray-700">
-        Pragmatic help to ship, scale, and stabilize NumStore in real systems—from commercial deployments
-        to cutting-edge research environments.
+        NumStore consulting services provide technical assistance for deployment, optimization,
+        and integration of NumStore in production and research environments.
       </p>
     </section>
 
     <!-- Academic Consulting Notice ----------------------------------------->
     <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 space-y-2">
-      <h2 class="text-lg font-semibold text-blue-900">Academic & Research Consulting</h2>
+      <h2 class="text-lg font-semibold text-blue-900">Academic Consulting Programs</h2>
       <p class="text-gray-700">
-        Research institutions qualify for <strong>discounted consulting rates</strong> and flexible engagement
-        models. I've helped labs optimize data collection pipelines, implement custom storage strategies
-        for experimental data, and scale NumStore for large-scale scientific computing.
+        Discounted consulting rates and flexible engagement models are available for research institutions.
+        Services include optimization of data acquisition systems, storage strategy implementation,
+        and performance tuning for scientific computing workloads.
       </p>
       <p class="text-sm text-gray-700">
-        Contact <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
-        to discuss your research computing needs.
+        Academic consulting inquiries: <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
       </p>
     </section>
 
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">What I do</h2>
+      <h2 class="text-xl font-semibold">Service Areas</h2>
       <ul class="list-disc pl-6 space-y-1">
         <li v-for="(item, i) in offerings" :key="i">{{ item }}</li>
       </ul>

@@ -27,8 +27,8 @@ import NavFooter from "@/views/nav/NavFooter.vue";
 
           <!-- Academic & Research Focus -->
           <div class="mt-2 text-sm text-gray-700 max-w-2xl">
-            <p class="font-semibold text-blue-700">Built for Researchers & Early Adopters</p>
-            <p class="text-xs mt-1">Academic use encouraged • Special pricing for research institutions • Free for qualifying educational projects</p>
+            <p class="font-semibold text-blue-700">A database for numeric time-series data</p>
+            <p class="text-xs mt-1">Academic licenses available • Discounted pricing for research institutions</p>
           </div>
         </div>
 
@@ -86,19 +86,19 @@ import NavFooter from "@/views/nav/NavFooter.vue";
     <!-- Key Features Banner -->
     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-y border-blue-200 py-6 px-10">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-xl font-bold text-gray-800 mb-4">Why Numstore?</h2>
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Features</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
           <div class="flex flex-col">
-            <div class="font-semibold text-blue-700 mb-2">Pure C, Zero Dependencies</div>
-            <p class="text-gray-700">Embedded database written in 100% dependency-free C. Integrate into any language—Python, Java, Go, Rust, or your custom stack.</p>
+            <div class="font-semibold text-blue-700 mb-2">Dependency-Free C Implementation</div>
+            <p class="text-gray-700">Written in standard C with no external dependencies. Provides bindings for Python, Java, and other languages through a stable C API.</p>
           </div>
           <div class="flex flex-col">
-            <div class="font-semibold text-blue-700 mb-2">Early Adoption Advantage</div>
-            <p class="text-gray-700">Join now during early development. Influence feature roadmap, get direct access to the maintainer, and shape the future of numeric data storage.</p>
+            <div class="font-semibold text-blue-700 mb-2">Contiguous Storage Model</div>
+            <p class="text-gray-700">Stores numeric arrays in contiguous memory blocks, enabling zero-copy reads and efficient cache utilization for sequential access patterns.</p>
           </div>
           <div class="flex flex-col">
-            <div class="font-semibold text-blue-700 mb-2">Extreme Performance</div>
-            <p class="text-gray-700">Optimized for time-series and numeric workloads. <strong>10-100x faster</strong> than traditional oscilloscope data readers and general-purpose databases for numeric operations.</p>
+            <div class="font-semibold text-blue-700 mb-2">R+ Tree Indexing</div>
+            <p class="text-gray-700">Implements R+ tree spatial indexing for O(log n) range queries on time-series data. Optimized for high-throughput numeric workloads.</p>
           </div>
         </div>
       </div>

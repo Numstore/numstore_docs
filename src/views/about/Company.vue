@@ -32,56 +32,63 @@ const timeline = [
   <main class="max-w-3xl mx-auto px-6 py-12 space-y-10">
     <!-- Header -->
     <section class="space-y-2">
-      <h1 class="text-3xl font-bold">About</h1>
+      <h1 class="text-3xl font-bold">About NumStore</h1>
       <p class="text-gray-700">
-        I'm building NumStore as a solo project—dependable software for numeric and systems workloads.
-        My focus is on correctness, performance, and developer ergonomics, with a special commitment
-        to advancing academic research and scientific computing.
+        NumStore is a specialized database system designed for numeric time-series data and scientific computing workloads.
+        The system prioritizes write throughput, query performance, and storage efficiency for contiguous numeric arrays.
       </p>
     </section>
 
-    <!-- Background -->
+    <!-- Design Goals -->
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">Background</h2>
+      <h2 class="text-xl font-semibold">Design Goals</h2>
       <p class="text-gray-700">
-        My background is in applied mathematics and computer science, with experience in low-level systems
-        programming and data structure design. I built NumStore to solve a problem I kept encountering:
-        traditional databases aren't designed for high-throughput numeric time-series data. The result is
-        a purpose-built database that prioritizes performance and simplicity.
+        NumStore addresses limitations in traditional relational databases when handling high-frequency numeric data streams.
+        Conventional row-based storage introduces significant overhead for numeric arrays, while NumStore's contiguous storage
+        model eliminates per-sample metadata and enables direct memory access patterns. The system targets applications requiring
+        sustained write rates exceeding 1 million samples per second with sub-millisecond query latency.
       </p>
     </section>
 
-    <!-- Academic Mission -->
+    <!-- Academic Licensing -->
     <section class="space-y-3 bg-blue-50 p-6 rounded-lg border border-blue-200">
-      <h2 class="text-xl font-semibold text-blue-900">Academic Research Program</h2>
+      <h2 class="text-xl font-semibold text-blue-900">Academic Licensing</h2>
       <p class="text-gray-700">
-        NumStore was built with researchers in mind. I believe in supporting the scientific community
-        and understand the unique constraints of academic environments.
+        NumStore provides licensing options for academic and research institutions. The system is designed
+        to support scientific computing workflows including data acquisition, experimental measurement, and
+        computational research.
       </p>
       <ul class="list-disc pl-6 space-y-1">
-        <li><strong>Free for qualifying educational projects</strong> — Students and academic labs can use NumStore at no cost for research purposes</li>
-        <li><strong>Heavily discounted licenses</strong> — Research institutions receive significant pricing reductions</li>
-        <li><strong>Direct technical support</strong> — Academic users get direct access for technical questions</li>
-        <li><strong>Co-development opportunities</strong> — I'm open to partnering with research groups to add features that advance science</li>
+        <li>No-cost licenses available for qualifying educational and research projects</li>
+        <li>Discounted institutional licenses for universities and research organizations</li>
+        <li>Technical support for academic users</li>
+        <li>Collaboration on domain-specific features for scientific applications</li>
       </ul>
       <p class="text-sm text-gray-700">
-        Contact me at <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a> to discuss your research needs and eligibility.
+        For academic licensing inquiries: <a class="underline font-medium" href="mailto:academic@numstore.dev">academic@numstore.dev</a>
       </p>
     </section>
 
-    <!-- What I do -->
+    <!-- Technical Characteristics -->
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">What I do</h2>
+      <h2 class="text-xl font-semibold">Technical Characteristics</h2>
       <ul class="list-disc pl-6 space-y-1">
-        <li v-for="(h, i) in highlights" :key="i">{{ h }}</li>
+        <li>Dependency-free C implementation with stable API surface</li>
+        <li>Contiguous storage optimized for sequential numeric access</li>
+        <li>R+ tree spatial indexing for temporal range queries</li>
+        <li>Write-ahead logging with ACID transaction support</li>
       </ul>
     </section>
 
-    <!-- Offerings -->
+    <!-- Available Services -->
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">Offerings</h2>
+      <h2 class="text-xl font-semibold">Available Services</h2>
       <ul class="list-disc pl-6 space-y-1">
-        <li v-for="(o, i) in offerings" :key="i">{{ o }}</li>
+        <li>NumStore database and language bindings (Python, Java)</li>
+        <li>Academic licensing program for research institutions</li>
+        <li>Commercial support contracts with defined SLAs</li>
+        <li>Architecture consulting and performance optimization</li>
+        <li>Training for operators and developers</li>
       </ul>
       <p class="text-sm text-gray-700">
         See <a class="underline" href="/services/enterprise_support">Support</a>,
@@ -90,11 +97,14 @@ const timeline = [
       </p>
     </section>
 
-    <!-- Values -->
+    <!-- Development Philosophy -->
     <section class="space-y-3">
-      <h2 class="text-xl font-semibold">Values</h2>
+      <h2 class="text-xl font-semibold">Development Philosophy</h2>
       <ul class="list-disc pl-6 space-y-1">
-        <li v-for="(v, i) in values" :key="i">{{ v }}</li>
+        <li>Correctness and reliability over feature complexity</li>
+        <li>Predictable performance characteristics</li>
+        <li>Minimal dependencies and clear API boundaries</li>
+        <li>Long-term stability and backward compatibility</li>
       </ul>
     </section>
 
