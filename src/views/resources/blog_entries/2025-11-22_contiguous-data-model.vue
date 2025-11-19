@@ -320,20 +320,6 @@ fft = np.fft.fft(data)
 </code></pre>
 
     <h3>C/C++</h3>
-    <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>#include <numstore.h>
-
-// Query returns a pointer to contiguous float array
-float *data;
-size_t count;
-numstore_query(stream, t_start, t_end, &data, &count);
-
-// Direct SIMD processing (AVX2)
-__m256 sum_vec = _mm256_setzero_ps();
-for (size_t i = 0; i < count; i += 8) {
-    sum_vec = _mm256_add_ps(sum_vec, _mm256_load_ps(&data[i]));
-}
-</code></pre>
-
     <h2>Conclusion</h2>
 
     <p>

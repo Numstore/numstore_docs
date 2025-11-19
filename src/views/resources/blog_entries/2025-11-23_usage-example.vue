@@ -111,34 +111,6 @@ except KeyboardInterrupt:
 </code></pre>
 
     <h3>Production Data Ingestion (from Real Hardware)</h3>
-    <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>import numstore
-import serial  # pyserial for hardware communication
-import struct
-
-# Open database and stream
-db = numstore.open("building_monitoring.db")
-stream = db.get_stream("temperature_sensors")
-
-# Connect to sensor controller (e.g., via RS-485)
-sensor_port = serial.Serial('/dev/ttyUSB0', baudrate=115200)
-
-print("Connected to sensor network...")
-
-buffer = []
-BATCH_SIZE = 1000  # Write in batches for efficiency
-
-while True:
-    # Read sensor packet (format: sensor_id + temperature)
-    packet = sensor_port.read(6)  # 2 bytes ID + 4 bytes float
-    sensor_id, temperature = struct.unpack('<Hf', packet)
-
-    buffer.append(temperature)
-
-    # Write batch to NumStore
-    if len(buffer) >= BATCH_SIZE:
-        stream.write(np.array(buffer, dtype=np.float32))
-        buffer = []
-</code></pre>
 
     <h2>Step 4: Query and Analyze Data</h2>
 

@@ -24,12 +24,6 @@ import NavFooter from "@/views/nav/NavFooter.vue";
               </div>
             </RouterLink>
           </div>
-
-          <!-- Academic & Research Focus -->
-          <div class="mt-2 text-sm text-gray-700 max-w-2xl">
-            <p class="font-semibold text-blue-700">Built for Researchers & Early Adopters</p>
-            <p class="text-xs mt-1">Academic use encouraged • Special pricing for research institutions • Free for qualifying educational projects</p>
-          </div>
         </div>
 
         <!-- Nav -->
