@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-19T08:45:42.156624",
+  "generated_at": "2025-12-01T19:07:31.989914",
   "total_releases": 3,
   "latest_version": "1.1.0",
   "releases": [
@@ -7,28 +7,28 @@
       "version": "1.1.0",
       "library": [
         {
-          "name": "numstore-1.1.0-linux-x64.tar.gz",
-          "path": "releases/1.1.0/library/numstore-1.1.0-linux-x64.tar.gz",
-          "size": 1029,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
-          "name": "numstore-1.1.0-windows-x64.zip",
-          "path": "releases/1.1.0/library/numstore-1.1.0-windows-x64.zip",
-          "size": 1115,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
           "name": "numstore-1.1.0-macos-arm64.tar.gz",
           "path": "releases/1.1.0/library/numstore-1.1.0-macos-arm64.tar.gz",
           "size": 1186,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         },
         {
           "name": "libnumstore.so",
           "path": "releases/1.1.0/library/libnumstore.so",
           "size": 77,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore-1.1.0-windows-x64.zip",
+          "path": "releases/1.1.0/library/numstore-1.1.0-windows-x64.zip",
+          "size": 1115,
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore-1.1.0-linux-x64.tar.gz",
+          "path": "releases/1.1.0/library/numstore-1.1.0-linux-x64.tar.gz",
+          "size": 1029,
+          "modified": "2025-12-01T18:30:39"
         }
       ],
       "docs": [
@@ -36,21 +36,21 @@
           "name": "index.html",
           "path": "releases/1.1.0/docs/index.html",
           "size": 228,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         }
       ],
       "artifacts": [
         {
-          "name": "numstore-python-1.1.0-py3-none-any.whl",
-          "path": "releases/1.1.0/artifacts/numstore-python-1.1.0-py3-none-any.whl",
-          "size": 825,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
           "name": "numstore-examples.tar.gz",
           "path": "releases/1.1.0/artifacts/numstore-examples.tar.gz",
           "size": 987,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore-python-1.1.0-py3-none-any.whl",
+          "path": "releases/1.1.0/artifacts/numstore-python-1.1.0-py3-none-any.whl",
+          "size": 825,
+          "modified": "2025-12-01T18:30:39"
         }
       ]
     },
@@ -58,22 +58,22 @@
       "version": "1.0.1",
       "library": [
         {
-          "name": "numstore-1.0.1-linux-x64.tar.gz",
-          "path": "releases/1.0.1/library/numstore-1.0.1-linux-x64.tar.gz",
-          "size": 896,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
           "name": "numstore-1.0.1-windows-x64.zip",
           "path": "releases/1.0.1/library/numstore-1.0.1-windows-x64.zip",
           "size": 973,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         },
         {
           "name": "libnumstore.so",
           "path": "releases/1.0.1/library/libnumstore.so",
           "size": 77,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore-1.0.1-linux-x64.tar.gz",
+          "path": "releases/1.0.1/library/numstore-1.0.1-linux-x64.tar.gz",
+          "size": 896,
+          "modified": "2025-12-01T18:30:39"
         }
       ],
       "docs": [
@@ -81,7 +81,7 @@
           "name": "index.html",
           "path": "releases/1.0.1/docs/index.html",
           "size": 228,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         }
       ],
       "artifacts": []
@@ -93,31 +93,31 @@
           "name": "numstore-1.0.0-windows-x64.zip",
           "path": "releases/1.0.0/library/numstore-1.0.0-windows-x64.zip",
           "size": 703,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
-          "name": "numstore-1.0.0-linux-x64.tar.gz",
-          "path": "releases/1.0.0/library/numstore-1.0.0-linux-x64.tar.gz",
-          "size": 627,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
-          "name": "numstore.h",
-          "path": "releases/1.0.0/library/numstore.h",
-          "size": 360,
-          "modified": "2025-11-18T19:23:19.054028"
-        },
-        {
-          "name": "numstore-1.0.0-macos-arm64.tar.gz",
-          "path": "releases/1.0.0/library/numstore-1.0.0-macos-arm64.tar.gz",
-          "size": 745,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         },
         {
           "name": "libnumstore.so",
           "path": "releases/1.0.0/library/libnumstore.so",
           "size": 70,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore.h",
+          "path": "releases/1.0.0/library/numstore.h",
+          "size": 360,
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore-1.0.0-macos-arm64.tar.gz",
+          "path": "releases/1.0.0/library/numstore-1.0.0-macos-arm64.tar.gz",
+          "size": 745,
+          "modified": "2025-12-01T18:30:39"
+        },
+        {
+          "name": "numstore-1.0.0-linux-x64.tar.gz",
+          "path": "releases/1.0.0/library/numstore-1.0.0-linux-x64.tar.gz",
+          "size": 627,
+          "modified": "2025-12-01T18:30:39"
         }
       ],
       "docs": [
@@ -125,7 +125,7 @@
           "name": "index.html",
           "path": "releases/1.0.0/docs/index.html",
           "size": 228,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         }
       ],
       "artifacts": [
@@ -133,13 +133,13 @@
           "name": "numstore-cli",
           "path": "releases/1.0.0/artifacts/numstore-cli",
           "size": 110,
-          "modified": "2025-11-18T19:23:19.050028"
+          "modified": "2025-12-01T18:30:39"
         },
         {
           "name": "numstore-examples.tar.gz",
           "path": "releases/1.0.0/artifacts/numstore-examples.tar.gz",
           "size": 647,
-          "modified": "2025-11-18T19:23:19.054028"
+          "modified": "2025-12-01T18:30:39"
         }
       ]
     }

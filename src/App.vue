@@ -33,44 +33,9 @@ import NavFooter from "@/views/nav/NavFooter.vue";
 
             <NavBarEntry
                 :items="[
-                    { text: 'Current', href: '/downloads/current' },
-                    { text: 'Archive', href: '/downloads/archive' },
+                    { text: 'Home', href: '/' },
                     ]"
-                label="Downloads"
-            />
-
-            <NavBarEntry
-                :items="[
-                    { text: 'Documentation', href: '/resources/documentation' },
-                    { text: 'Blog', href: '/resources/blog' },
-                    { text: 'References', href: '/resources/references' },
-                    ]"
-                label="Resources"
-            />
-
-            <NavBarEntry
-                :items="[
-                    { text: 'Enterprise Support', href: '/services/enterprise_support' },
-                    { text: 'Consulting', href: '/services/consulting' },
-                    { text: 'Training', href: '/services/training' },
-                    ]"
-                label="Services"
-            />
-
-            <NavBarEntry
-                :items="[
-                    { text: 'Bug Reporting', href: '/community/bug_reporting' },
-                    { text: 'Forum', href: '/community/forum' },
-                    ]"
-                label="Community"
-            />
-
-            <NavBarEntry
-                :items="[
-                    { text: 'Company', href: '/about/company' },
-                    { text: 'Contact', href: '/about/contact' },
-                    ]"
-                label="About"
+                label="Home"
             />
           </nav>
         </div>

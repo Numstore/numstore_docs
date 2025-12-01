@@ -99,7 +99,9 @@ const routes: RouteRecordRaw[] = [
     // -------------------------- Misc --------------------------
     {
         path: '/',
-        redirect: {name: 'ResourcesDocumentation'},
+        name: 'Home',
+        component: () => import('@/views/HomePage.vue'),
+        meta: {section: 'Home', label: 'Home'}
     },
     {
         path: '/:pathMatch(.*)*',
