@@ -1,25 +1,26 @@
 <template>
-  <!-- Hoverable group wrapper -->
-  <div :class="['relative group', groupHoverClass]">
-
+  <div class="relative group">
     <!-- Button -->
-    <button class="flex items-center px-3 py-2">
+    <button :class="['flex items-center px-4 py-2 text-sm font-medium text-gray-700 transition-colors', groupHoverClass]">
       {{ label }}
-      <i class="fa-solid fa-caret-down ml-2 text-sm"></i>
+      <svg class="ml-1 w-4 h-4 text-gray-400 group-hover:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
     </button>
 
     <!-- Dropdown -->
     <div
         :class="[
-        'absolute left-0 w-40 ',
-        'group-hover:opacity-100 invisible group-hover:visible',
+        'absolute left-0 mt-1 w-48 rounded-md py-1 z-50',
+        'opacity-0 invisible group-hover:opacity-100 group-hover:visible',
+        'transition-all duration-150 ease-out',
         bgClass
       ]"
     >
       <RouterLink
           v-for="(item, i) in items"
           :key="i"
-          :class="['block px-4 py-2', itemHoverClass]"
+          :class="['block px-4 py-2 text-sm text-gray-700 transition-colors', itemHoverClass]"
           :to="item.href"
       >
         {{ item.text }}
@@ -36,8 +37,7 @@ interface DropdownItem {
   href: string
 }
 
-/* ---------- props ---------- */
-const props = withDefaults(
+withDefaults(
     defineProps<{
       label: string
       items: DropdownItem[]
@@ -46,11 +46,9 @@ const props = withDefaults(
       itemHoverClass?: string
     }>(),
     {
-      bgClass: 'bg-blue-400',
-      groupHoverClass: 'hover:bg-blue-300',
-      itemHoverClass: 'hover:bg-blue-500'
+      bgClass: 'bg-white shadow-lg border border-gray-200',
+      groupHoverClass: 'hover:text-cyan-600',
+      itemHoverClass: 'hover:bg-cyan-50 hover:text-cyan-700'
     }
 )
-
-const {label, items, bgClass, groupHoverClass, itemHoverClass} = props
 </script>

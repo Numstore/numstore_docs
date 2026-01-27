@@ -1,6 +1,14 @@
 import {createRouter, createWebHistory, type RouteRecordRaw} from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
+    // -------------------------- Home --------------------------
+    {
+        path: '/',
+        name: 'Home',
+        component: () => import('@/views/Home.vue'),
+        meta: {section: 'Home', label: 'Home'}
+    },
+
     // -------------------------- Downloads --------------------------
     {path: '/downloads', redirect: '/downloads/current'},
     {
@@ -24,7 +32,6 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/resources/ResourcesDocumentation.vue'),
         meta: {section: 'Resources', label: 'Documentation'}
     },
-    // Redirect legacy blog path to new /blog routes
     {
         path: '/resources/blog',
         name: 'Blog',
@@ -96,11 +103,7 @@ const routes: RouteRecordRaw[] = [
         meta: {section: 'About', label: 'Contact'}
     },
 
-    // -------------------------- Misc --------------------------
-    {
-        path: '/',
-        redirect: {name: 'ResourcesDocumentation'},
-    },
+    // -------------------------- Catch-all --------------------------
     {
         path: '/:pathMatch(.*)*',
         redirect: '/'
