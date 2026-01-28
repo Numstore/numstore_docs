@@ -3,218 +3,892 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numstore Documentation</title>
+    <title>NumStore Documentation</title>
     <style>
+        :root {
+            --cyan-600: #0891b2;
+            --cyan-700: #0e7490;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            line-height: 1.7;
+            color: var(--gray-800);
+            margin: 0;
+            padding: 0;
+            background: var(--gray-50);
         }
-        h1 {
-            color: #2563eb;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
+
+        .container {
+            display: flex;
+            min-height: 100vh;
         }
-        h2 {
-            color: #1e40af;
-            margin-top: 30px;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 5px;
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: white;
+            border-right: 1px solid var(--gray-200);
+            padding: 24px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
         }
-        h3 {
-            color: #1e3a8a;
-            margin-top: 20px;
-        }
-        code {
-            background-color: #f3f4f6;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        pre {
-            background-color: #1f2937;
-            color: #f9fafb;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        pre code {
-            background-color: transparent;
-            color: #f9fafb;
+
+        .sidebar h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-600);
+            margin: 24px 0 12px 0;
             padding: 0;
         }
-        .note {
-            background-color: #dbeafe;
-            border-left: 4px solid #2563eb;
-            padding: 15px;
-            margin: 20px 0;
+
+        .sidebar h2:first-child {
+            margin-top: 0;
         }
-        .warning {
-            background-color: #fef3c7;
-            border-left: 4px solid #f59e0b;
-            padding: 15px;
-            margin: 20px 0;
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        a {
-            color: #2563eb;
+
+        .sidebar li {
+            margin: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 6px 12px;
+            color: var(--gray-700);
             text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.15s;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .sidebar a:hover {
+            background: var(--gray-100);
+            color: var(--cyan-700);
         }
+
+        .sidebar a.active {
+            background: #ecfeff;
+            color: var(--cyan-700);
+            font-weight: 500;
+        }
+
+        /* Main content */
+        .main {
+            flex: 1;
+            margin-left: 280px;
+            padding: 48px 64px;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+
+        h1 + p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: 48px 0 16px 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        h2:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin: 32px 0 12px 0;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin: 24px 0 8px 0;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+        }
+
+        code {
+            background: var(--gray-100);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+            font-size: 0.875em;
+            color: var(--cyan-700);
+        }
+
+        pre {
+            background: var(--gray-900);
+            color: #e5e7eb;
+            padding: 20px 24px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0 24px 0;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+            font-size: 0.875rem;
+        }
+
+        .comment { color: #6b7280; }
+        .keyword { color: #c084fc; }
+        .string { color: #4ade80; }
+        .number { color: #fb923c; }
+        .function { color: #60a5fa; }
+        .type { color: #f472b6; }
+
         ul, ol {
-            margin-left: 20px;
+            margin: 0 0 16px 0;
+            padding-left: 24px;
         }
+
         li {
             margin: 8px 0;
         }
+
         table {
-            border-collapse: collapse;
             width: 100%;
-            margin: 20px 0;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 0.875rem;
         }
+
         th, td {
-            border: 1px solid #d1d5db;
-            padding: 12px;
+            padding: 12px 16px;
             text-align: left;
+            border-bottom: 1px solid var(--gray-200);
         }
+
         th {
-            background-color: #f3f4f6;
+            background: var(--gray-50);
             font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        tr:hover td {
+            background: var(--gray-50);
+        }
+
+        .note {
+            background: #ecfeff;
+            border-left: 4px solid var(--cyan-600);
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .note strong {
+            color: var(--cyan-700);
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning strong {
+            color: #b45309;
+        }
+
+        a {
+            color: var(--cyan-600);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--gray-200);
+            margin: 48px 0;
+        }
+
+        .param-table code {
+            background: transparent;
+            color: var(--gray-800);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+            .main {
+                margin-left: 0;
+                padding: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Numstore Documentation</h1>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Getting Started</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#quickstart">Quick Start</a></li>
+            </ul>
 
-    <div class="note">
-        <strong>Note:</strong> This is a placeholder HTML file. Replace this file with your actual Sphinx-generated documentation.
+            <h2 id="nav-api">API Reference</h2>
+            <ul>
+                <li><a href="#api">C API Overview</a></li>
+                <li><a href="#api-database">Database Operations</a></li>
+                <li><a href="#api-stream">Stream Operations</a></li>
+                <li><a href="#api-query">Query Operations</a></li>
+                <li><a href="#api-types">Data Types</a></li>
+                <li><a href="#api-errors">Error Handling</a></li>
+            </ul>
+
+            <h2 id="nav-protocol">Network Protocol</h2>
+            <ul>
+                <li><a href="#protocol">Protocol Overview</a></li>
+                <li><a href="#protocol-tcp">TCP Protocol</a></li>
+                <li><a href="#protocol-udp">UDP Protocol</a></li>
+                <li><a href="#protocol-wire">Wire Format</a></li>
+            </ul>
+
+            <h2 id="nav-language">Language Reference</h2>
+            <ul>
+                <li><a href="#language">Query Syntax</a></li>
+                <li><a href="#language-schema">Schema Definitions</a></li>
+                <li><a href="#language-expressions">Expressions</a></li>
+            </ul>
+
+            <h2 id="nav-cli">CLI Tool</h2>
+            <ul>
+                <li><a href="#cli">CLI Overview</a></li>
+                <li><a href="#cli-commands">Commands</a></li>
+                <li><a href="#cli-import">Import/Export</a></li>
+            </ul>
+
+            <h2 id="nav-python">Python Usage</h2>
+            <ul>
+                <li><a href="#python">Installation</a></li>
+                <li><a href="#python-basic">Basic Usage</a></li>
+                <li><a href="#python-numpy">NumPy Integration</a></li>
+                <li><a href="#python-advanced">Advanced Patterns</a></li>
+            </ul>
+
+            <h2 id="nav-java">Java Usage</h2>
+            <ul>
+                <li><a href="#java">Installation</a></li>
+                <li><a href="#java-basic">Basic Usage</a></li>
+                <li><a href="#java-memory">Memory Management</a></li>
+            </ul>
+
+            <h2 id="nav-config">Configuration</h2>
+            <ul>
+                <li><a href="#config">Configuration File</a></li>
+                <li><a href="#config-tuning">Performance Tuning</a></li>
+                <li><a href="#config-deploy">Deployment</a></li>
+            </ul>
+        </nav>
+
+        <main class="main">
+            <h1>NumStore Documentation</h1>
+            <p>
+                Comprehensive reference for NumStore, the high-performance embedded database
+                for numeric time-series and scientific data.
+            </p>
+
+            <!-- GETTING STARTED -->
+            <h2 id="introduction">Introduction</h2>
+            <p>
+                NumStore is an embedded database designed for storing and querying large volumes of
+                numeric data with extreme performance. It's optimized for time-series, sensor data,
+                ML feature stores, and scientific computing workloads.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Contiguous storage</strong> — Data is stored sequentially for cache efficiency and zero-copy reads</li>
+                <li><strong>R+ tree indexing</strong> — O(log n) range queries on time or numeric dimensions</li>
+                <li><strong>Write-ahead logging</strong> — ACID transactions with crash recovery</li>
+                <li><strong>Zero dependencies</strong> — Pure C with no external libraries required</li>
+                <li><strong>Language bindings</strong> — Native support for Python, Java, and C/C++</li>
+            </ul>
+
+            <h2 id="installation">Installation</h2>
+
+            <h3>Pre-built Binaries</h3>
+            <p>Download the latest release for your platform:</p>
+
+<pre><code><span class="comment"># Linux (x86_64)</span>
+curl -L https://numstore.dev/releases/numstore-1.0.0-linux-x86_64.tar.gz | tar xz
+
+<span class="comment"># macOS (Apple Silicon)</span>
+curl -L https://numstore.dev/releases/numstore-1.0.0-darwin-arm64.tar.gz | tar xz
+
+<span class="comment"># macOS (Intel)</span>
+curl -L https://numstore.dev/releases/numstore-1.0.0-darwin-x86_64.tar.gz | tar xz
+
+<span class="comment"># Verify installation</span>
+./bin/numstore --version</code></pre>
+
+            <h3>Building from Source</h3>
+<pre><code>git clone https://github.com/Numstore/numstore.git
+cd numstore
+make
+sudo make install</code></pre>
+
+            <h3>Python Package</h3>
+<pre><code>pip install numstore</code></pre>
+
+            <h3>Java (Maven)</h3>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;dev.numstore&lt;/groupId&gt;
+    &lt;artifactId&gt;numstore&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+
+            <h2 id="quickstart">Quick Start</h2>
+            <p>
+                Create a database, write some data, and query it back in under 10 lines:
+            </p>
+
+<pre><code><span class="keyword">import</span> numstore
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+
+<span class="comment"># Create or open a database</span>
+db = numstore.open(<span class="string">"sensors.ns"</span>, create=<span class="keyword">True</span>)
+
+<span class="comment"># Create a stream for temperature readings</span>
+stream = db.create_stream(<span class="string">"temperature"</span>, dtype=numstore.FLOAT32)
+
+<span class="comment"># Write 10,000 samples</span>
+data = np.random.randn(<span class="number">10000</span>).astype(np.float32) + <span class="number">22.0</span>
+stream.write(data)
+
+<span class="comment"># Query all data back (zero-copy!)</span>
+result = stream.query_all()
+<span class="function">print</span>(f<span class="string">"Mean: {result.mean():.2f}°C"</span>)
+
+db.close()</code></pre>
+
+            <!-- API REFERENCE -->
+            <h2 id="api">API Reference</h2>
+            <p>
+                The NumStore C API provides low-level access to all database operations.
+                All functions return <code>NS_OK</code> on success or an error code on failure.
+            </p>
+
+            <h3 id="api-database">Database Operations</h3>
+
+            <h4>ns_open</h4>
+            <p>Open or create a NumStore database.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_open</span>(
+    <span class="type">const char</span> *path,
+    <span class="type">ns_flags_t</span> flags,
+    <span class="type">ns_db_t</span> **db_out
+);</code></pre>
+
+            <table class="param-table">
+                <tr><th>Parameter</th><th>Description</th></tr>
+                <tr><td><code>path</code></td><td>Path to the database file</td></tr>
+                <tr><td><code>flags</code></td><td><code>NS_OPEN_CREATE</code>, <code>NS_OPEN_READONLY</code>, or <code>0</code></td></tr>
+                <tr><td><code>db_out</code></td><td>Output pointer to receive the database handle</td></tr>
+            </table>
+
+            <h4>ns_close</h4>
+            <p>Close a database and flush pending writes.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_close</span>(<span class="type">ns_db_t</span> *db);</code></pre>
+
+            <h4>ns_sync</h4>
+            <p>Force all pending writes to disk.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_sync</span>(<span class="type">ns_db_t</span> *db);</code></pre>
+
+            <h3 id="api-stream">Stream Operations</h3>
+
+            <h4>ns_create_stream</h4>
+            <p>Create a new data stream within the database.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_create_stream</span>(
+    <span class="type">ns_db_t</span> *db,
+    <span class="type">const char</span> *name,
+    <span class="type">ns_dtype_t</span> dtype,
+    <span class="type">ns_stream_t</span> **stream_out
+);</code></pre>
+
+            <h4>ns_get_stream</h4>
+            <p>Get a handle to an existing stream.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_get_stream</span>(
+    <span class="type">ns_db_t</span> *db,
+    <span class="type">const char</span> *name,
+    <span class="type">ns_stream_t</span> **stream_out
+);</code></pre>
+
+            <h4>ns_write</h4>
+            <p>Write samples to a stream.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_write</span>(
+    <span class="type">ns_stream_t</span> *stream,
+    <span class="type">const void</span> *data,
+    <span class="type">size_t</span> count
+);</code></pre>
+
+            <div class="note">
+                <strong>Performance tip:</strong> Batch writes for best throughput. Writing 10,000
+                samples at once is 10-100x faster than 10,000 individual writes.
+            </div>
+
+            <h3 id="api-query">Query Operations</h3>
+
+            <h4>ns_query_range</h4>
+            <p>Query samples within a time or index range.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_query_range</span>(
+    <span class="type">ns_stream_t</span> *stream,
+    <span class="type">int64_t</span> start,
+    <span class="type">int64_t</span> end,
+    <span class="type">void</span> **data_out,
+    <span class="type">size_t</span> *count_out
+);</code></pre>
+
+            <div class="warning">
+                <strong>Important:</strong> The returned <code>data_out</code> pointer is valid only until
+                the next query or database modification. Copy the data if you need to retain it.
+            </div>
+
+            <h4>ns_query_all</h4>
+            <p>Query all samples from a stream.</p>
+<pre><code><span class="type">ns_status_t</span> <span class="function">ns_query_all</span>(
+    <span class="type">ns_stream_t</span> *stream,
+    <span class="type">void</span> **data_out,
+    <span class="type">size_t</span> *count_out
+);</code></pre>
+
+            <h3 id="api-types">Data Types</h3>
+
+            <table>
+                <tr><th>Type Constant</th><th>C Type</th><th>Size</th><th>Description</th></tr>
+                <tr><td><code>NS_FLOAT32</code></td><td><code>float</code></td><td>4 bytes</td><td>32-bit floating point</td></tr>
+                <tr><td><code>NS_FLOAT64</code></td><td><code>double</code></td><td>8 bytes</td><td>64-bit floating point</td></tr>
+                <tr><td><code>NS_INT8</code></td><td><code>int8_t</code></td><td>1 byte</td><td>Signed 8-bit integer</td></tr>
+                <tr><td><code>NS_INT16</code></td><td><code>int16_t</code></td><td>2 bytes</td><td>Signed 16-bit integer</td></tr>
+                <tr><td><code>NS_INT32</code></td><td><code>int32_t</code></td><td>4 bytes</td><td>Signed 32-bit integer</td></tr>
+                <tr><td><code>NS_INT64</code></td><td><code>int64_t</code></td><td>8 bytes</td><td>Signed 64-bit integer</td></tr>
+                <tr><td><code>NS_UINT8</code></td><td><code>uint8_t</code></td><td>1 byte</td><td>Unsigned 8-bit integer</td></tr>
+                <tr><td><code>NS_UINT16</code></td><td><code>uint16_t</code></td><td>2 bytes</td><td>Unsigned 16-bit integer</td></tr>
+                <tr><td><code>NS_UINT32</code></td><td><code>uint32_t</code></td><td>4 bytes</td><td>Unsigned 32-bit integer</td></tr>
+                <tr><td><code>NS_UINT64</code></td><td><code>uint64_t</code></td><td>8 bytes</td><td>Unsigned 64-bit integer</td></tr>
+            </table>
+
+            <h3 id="api-errors">Error Handling</h3>
+
+            <table>
+                <tr><th>Error Code</th><th>Description</th></tr>
+                <tr><td><code>NS_OK</code></td><td>Operation completed successfully</td></tr>
+                <tr><td><code>NS_ERR_IO</code></td><td>I/O error (disk full, permission denied, etc.)</td></tr>
+                <tr><td><code>NS_ERR_CORRUPT</code></td><td>Database file is corrupted</td></tr>
+                <tr><td><code>NS_ERR_NOT_FOUND</code></td><td>Stream or record not found</td></tr>
+                <tr><td><code>NS_ERR_EXISTS</code></td><td>Stream already exists</td></tr>
+                <tr><td><code>NS_ERR_TYPE</code></td><td>Type mismatch</td></tr>
+                <tr><td><code>NS_ERR_MEMORY</code></td><td>Memory allocation failed</td></tr>
+                <tr><td><code>NS_ERR_INVALID</code></td><td>Invalid parameter</td></tr>
+            </table>
+
+<pre><code><span class="comment">// Example error handling</span>
+<span class="type">ns_status_t</span> status = <span class="function">ns_open</span>(<span class="string">"data.ns"</span>, NS_OPEN_CREATE, &db);
+<span class="keyword">if</span> (status != NS_OK) {
+    <span class="function">fprintf</span>(stderr, <span class="string">"Error: %s\n"</span>, <span class="function">ns_strerror</span>(status));
+    <span class="keyword">return</span> <span class="number">1</span>;
+}</code></pre>
+
+            <!-- NETWORK PROTOCOL -->
+            <h2 id="protocol">Network Protocol</h2>
+            <p>
+                NumStore supports both TCP and UDP protocols for client-server communication.
+                The protocols are designed for low latency and high throughput.
+            </p>
+
+            <h3 id="protocol-tcp">TCP Protocol</h3>
+            <p>
+                TCP provides reliable, ordered delivery with connection state. Use TCP for:
+            </p>
+            <ul>
+                <li>Transactional operations requiring acknowledgment</li>
+                <li>Large queries returning many samples</li>
+                <li>Administrative commands (create stream, configure, etc.)</li>
+            </ul>
+
+            <h4>Connection</h4>
+<pre><code><span class="comment"># Default port: 7432</span>
+numstore-server --listen 0.0.0.0:7432
+
+<span class="comment"># Connect from client</span>
+numstore-cli connect localhost:7432</code></pre>
+
+            <h3 id="protocol-udp">UDP Protocol</h3>
+            <p>
+                UDP provides lower latency for fire-and-forget writes. Use UDP for:
+            </p>
+            <ul>
+                <li>High-frequency sensor data ingestion</li>
+                <li>Metrics collection where occasional loss is acceptable</li>
+                <li>Real-time streaming with latency constraints</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Note:</strong> UDP writes are not guaranteed to be durable. Enable
+                acknowledgments (<code>--udp-ack</code>) if you need delivery confirmation.
+            </div>
+
+            <h3 id="protocol-wire">Wire Format</h3>
+            <p>All messages use a simple binary format:</p>
+
+            <table>
+                <tr><th>Offset</th><th>Size</th><th>Field</th><th>Description</th></tr>
+                <tr><td>0</td><td>4</td><td>Magic</td><td><code>0x4E53</code> ("NS")</td></tr>
+                <tr><td>4</td><td>2</td><td>Version</td><td>Protocol version (currently 1)</td></tr>
+                <tr><td>6</td><td>2</td><td>Opcode</td><td>Operation type</td></tr>
+                <tr><td>8</td><td>4</td><td>Length</td><td>Payload length in bytes</td></tr>
+                <tr><td>12</td><td>N</td><td>Payload</td><td>Operation-specific data</td></tr>
+            </table>
+
+            <!-- LANGUAGE REFERENCE -->
+            <h2 id="language">Language Reference</h2>
+            <p>
+                NumStore provides a simple query language for interactive use and scripting.
+            </p>
+
+            <h3 id="language-schema">Schema Definitions</h3>
+<pre><code><span class="comment">-- Create a stream with a specific type</span>
+CREATE STREAM temperature TYPE float32;
+
+<span class="comment">-- Create a stream with compound type</span>
+CREATE STREAM sensor_data TYPE {
+    timestamp: int64,
+    values: float32[1024],
+    quality: uint8
+};
+
+<span class="comment">-- List all streams</span>
+SHOW STREAMS;</code></pre>
+
+            <h3 id="language-expressions">Expressions</h3>
+<pre><code><span class="comment">-- Query by time range</span>
+SELECT FROM temperature
+WHERE timestamp BETWEEN '2025-01-01' AND '2025-01-02';
+
+<span class="comment">-- Query with aggregation</span>
+SELECT AVG(value), MAX(value), MIN(value)
+FROM temperature
+WHERE timestamp > NOW() - INTERVAL '1 hour';
+
+<span class="comment">-- Query with downsampling</span>
+SELECT DOWNSAMPLE(value, '1 minute', 'mean')
+FROM temperature
+WHERE timestamp > NOW() - INTERVAL '24 hours';</code></pre>
+
+            <!-- CLI TOOL -->
+            <h2 id="cli">CLI Tool</h2>
+            <p>
+                The <code>numstore</code> command-line tool provides database management,
+                import/export, and interactive querying.
+            </p>
+
+            <h3 id="cli-commands">Commands</h3>
+
+            <h4>Database Management</h4>
+<pre><code><span class="comment"># Initialize a new database</span>
+numstore init mydata.ns
+
+<span class="comment"># Show database info</span>
+numstore info mydata.ns
+
+<span class="comment"># Compact and optimize</span>
+numstore compact mydata.ns
+
+<span class="comment"># Verify integrity</span>
+numstore check mydata.ns
+
+<span class="comment"># Backup</span>
+numstore backup mydata.ns backup/</code></pre>
+
+            <h4>Stream Operations</h4>
+<pre><code><span class="comment"># List streams</span>
+numstore streams mydata.ns
+
+<span class="comment"># Create a stream</span>
+numstore create-stream mydata.ns --name temperature --type float32
+
+<span class="comment"># Show stream stats</span>
+numstore stats mydata.ns temperature
+
+<span class="comment"># Delete a stream</span>
+numstore drop-stream mydata.ns temperature</code></pre>
+
+            <h3 id="cli-import">Import/Export</h3>
+
+<pre><code><span class="comment"># Import from CSV</span>
+numstore import mydata.ns temperature data.csv \
+    --format csv \
+    --column value \
+    --timestamp-column time
+
+<span class="comment"># Import from binary</span>
+numstore import mydata.ns sensors data.bin \
+    --format binary \
+    --dtype float32
+
+<span class="comment"># Export to CSV</span>
+numstore export mydata.ns temperature output.csv \
+    --format csv \
+    --start '2025-01-01' \
+    --end '2025-01-31'
+
+<span class="comment"># Export to NumPy format</span>
+numstore export mydata.ns temperature output.npy \
+    --format numpy</code></pre>
+
+            <!-- PYTHON -->
+            <h2 id="python">Python Usage</h2>
+
+            <h3>Installation</h3>
+<pre><code>pip install numstore
+
+<span class="comment"># Or with conda</span>
+conda install -c numstore numstore</code></pre>
+
+            <h3 id="python-basic">Basic Usage</h3>
+<pre><code><span class="keyword">import</span> numstore
+
+<span class="comment"># Open database</span>
+db = numstore.open(<span class="string">"sensors.ns"</span>, create=<span class="keyword">True</span>)
+
+<span class="comment"># Create stream</span>
+stream = db.create_stream(<span class="string">"temperature"</span>, dtype=numstore.FLOAT32)
+
+<span class="comment"># Write data</span>
+stream.write([<span class="number">23.5</span>, <span class="number">24.1</span>, <span class="number">22.8</span>, <span class="number">23.2</span>])
+
+<span class="comment"># Query data</span>
+data = stream.query_all()
+<span class="function">print</span>(data)  <span class="comment"># [23.5, 24.1, 22.8, 23.2]</span>
+
+<span class="comment"># Close</span>
+db.close()</code></pre>
+
+            <h3 id="python-numpy">NumPy Integration</h3>
+            <p>
+                NumStore returns zero-copy NumPy arrays when possible, avoiding memory
+                allocation and copying overhead.
+            </p>
+
+<pre><code><span class="keyword">import</span> numstore
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+
+db = numstore.open(<span class="string">"data.ns"</span>)
+stream = db.get_stream(<span class="string">"measurements"</span>)
+
+<span class="comment"># Query returns a NumPy array</span>
+data = stream.query_range(start=<span class="number">0</span>, end=<span class="number">1000000</span>)
+<span class="function">print</span>(<span class="function">type</span>(data))  <span class="comment"># &lt;class 'numpy.ndarray'&gt;</span>
+
+<span class="comment"># Direct NumPy operations (no copying)</span>
+mean = np.mean(data)
+std = np.std(data)
+fft = np.fft.fft(data)
+
+<span class="comment"># Write NumPy arrays directly</span>
+new_data = np.random.randn(<span class="number">10000</span>).astype(np.float32)
+stream.write(new_data)</code></pre>
+
+            <h3 id="python-advanced">Advanced Patterns</h3>
+
+            <h4>Context Manager</h4>
+<pre><code><span class="keyword">with</span> numstore.open(<span class="string">"data.ns"</span>) <span class="keyword">as</span> db:
+    stream = db.get_stream(<span class="string">"temperature"</span>)
+    data = stream.query_all()
+    <span class="comment"># db.close() called automatically</span></code></pre>
+
+            <h4>Timestamps</h4>
+<pre><code><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta
+
+<span class="comment"># Write with timestamps</span>
+stream.write(data, timestamp=datetime.now())
+
+<span class="comment"># Query by time range</span>
+start = datetime.now() - timedelta(hours=<span class="number">1</span>)
+end = datetime.now()
+result = stream.query(start_time=start, end_time=end)</code></pre>
+
+            <!-- JAVA -->
+            <h2 id="java">Java Usage</h2>
+
+            <h3>Installation</h3>
+            <p>Add the Maven dependency:</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;dev.numstore&lt;/groupId&gt;
+    &lt;artifactId&gt;numstore&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+
+            <h3 id="java-basic">Basic Usage</h3>
+<pre><code><span class="keyword">import</span> dev.numstore.*;
+
+<span class="keyword">public class</span> <span class="type">Example</span> {
+    <span class="keyword">public static void</span> <span class="function">main</span>(String[] args) {
+        <span class="comment">// Open database</span>
+        <span class="keyword">try</span> (Database db = NumStore.open(<span class="string">"data.ns"</span>, OpenFlags.CREATE)) {
+            <span class="comment">// Create stream</span>
+            Stream stream = db.createStream(<span class="string">"temperature"</span>, DataType.FLOAT32);
+
+            <span class="comment">// Write data</span>
+            <span class="keyword">float</span>[] data = {<span class="number">23.5f</span>, <span class="number">24.1f</span>, <span class="number">22.8f</span>};
+            stream.write(data);
+
+            <span class="comment">// Query data</span>
+            <span class="keyword">float</span>[] result = stream.queryAll();
+            System.out.println(Arrays.toString(result));
+        }
+    }
+}</code></pre>
+
+            <h3 id="java-memory">Memory Management</h3>
+            <p>
+                The Java bindings use direct ByteBuffers for zero-copy access when possible.
+                Always close database handles to release native resources.
+            </p>
+
+<pre><code><span class="comment">// Direct buffer access for large queries</span>
+ByteBuffer buffer = stream.queryRangeDirect(<span class="number">0</span>, <span class="number">1000000</span>);
+FloatBuffer floats = buffer.asFloatBuffer();
+
+<span class="comment">// Process without copying</span>
+<span class="keyword">while</span> (floats.hasRemaining()) {
+    <span class="keyword">float</span> value = floats.get();
+    <span class="comment">// process value...</span>
+}</code></pre>
+
+            <!-- CONFIGURATION -->
+            <h2 id="config">Configuration</h2>
+
+            <h3>Configuration File</h3>
+            <p>
+                Create a <code>numstore.conf</code> file to configure the server:
+            </p>
+
+<pre><code><span class="comment"># numstore.conf</span>
+
+<span class="comment"># Network settings</span>
+listen = "0.0.0.0:7432"
+max_connections = 100
+
+<span class="comment"># Storage settings</span>
+data_dir = "/var/lib/numstore"
+wal_dir = "/var/lib/numstore/wal"
+
+<span class="comment"># Memory settings</span>
+buffer_pool_size = "1GB"
+write_buffer_size = "64MB"
+
+<span class="comment"># WAL settings</span>
+wal_sync_mode = "fsync"  <span class="comment"># fsync, fdatasync, or async</span>
+wal_checkpoint_interval = "60s"
+
+<span class="comment"># Logging</span>
+log_level = "info"
+log_file = "/var/log/numstore/numstore.log"</code></pre>
+
+            <h3 id="config-tuning">Performance Tuning</h3>
+
+            <h4>Write-Heavy Workloads</h4>
+<pre><code><span class="comment"># Increase write buffer for batch ingestion</span>
+write_buffer_size = "256MB"
+
+<span class="comment"># Use async WAL for maximum throughput (less durable)</span>
+wal_sync_mode = "async"
+
+<span class="comment"># Increase checkpoint interval</span>
+wal_checkpoint_interval = "300s"</code></pre>
+
+            <h4>Query-Heavy Workloads</h4>
+<pre><code><span class="comment"># Increase buffer pool for caching</span>
+buffer_pool_size = "4GB"
+
+<span class="comment"># Enable read-ahead</span>
+read_ahead_size = "1MB"
+
+<span class="comment"># Use memory-mapped I/O</span>
+use_mmap = true</code></pre>
+
+            <h3 id="config-deploy">Deployment</h3>
+
+            <h4>systemd Service</h4>
+<pre><code><span class="comment"># /etc/systemd/system/numstore.service</span>
+[Unit]
+Description=NumStore Database Server
+After=network.target
+
+[Service]
+Type=simple
+User=numstore
+ExecStart=/usr/bin/numstore-server --config /etc/numstore/numstore.conf
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+
+            <h4>Docker</h4>
+<pre><code>docker run -d \
+  --name numstore \
+  -p 7432:7432 \
+  -v /data/numstore:/var/lib/numstore \
+  numstore/numstore:1.0.0</code></pre>
+
+            <hr>
+
+            <p style="text-align: center; color: var(--gray-600); font-size: 14px;">
+                NumStore Documentation v1.0.0<br>
+                <a href="https://github.com/Numstore/numstore">GitHub</a> ·
+                <a href="mailto:hello@numstore.dev">Contact</a> ·
+                <a href="/resources/blog">Blog</a>
+            </p>
+        </main>
     </div>
-
-    <h2>Table of Contents</h2>
-    <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#getting-started">Getting Started</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#api-reference">API Reference</a></li>
-    </ul>
-
-    <h2 id="introduction">Introduction</h2>
-    <p>
-        Numstore is a high-performance database system designed for storing and managing numerical data efficiently.
-        This documentation provides comprehensive information about installation, configuration, and usage.
-    </p>
-
-    <h2 id="getting-started">Getting Started</h2>
-    <p>
-        To get started with Numstore, follow these simple steps to install and configure your first instance.
-    </p>
-
-    <h3>Prerequisites</h3>
-    <ul>
-        <li>Linux, macOS, or Windows operating system</li>
-        <li>At least 4GB of RAM</li>
-        <li>C compiler (GCC, Clang, or MSVC)</li>
-    </ul>
-
-    <h2 id="installation">Installation</h2>
-
-    <h3>Linux</h3>
-    <pre><code>$ wget https://example.com/numstore-latest.tar.gz
-$ tar -xzf numstore-latest.tar.gz
-$ cd numstore
-$ ./configure
-$ make
-$ sudo make install</code></pre>
-
-    <h3>Windows</h3>
-    <pre><code>C:\> numstore-installer.exe
-C:\> numstore --version</code></pre>
-
-    <h3>macOS</h3>
-    <pre><code>$ brew install numstore
-$ numstore --version</code></pre>
-
-    <h2 id="usage">Usage</h2>
-    <p>
-        Once installed, you can start using Numstore through its command-line interface or programming APIs.
-    </p>
-
-    <h3>Basic Commands</h3>
-    <pre><code># Start the Numstore server
-$ numstore-server start
-
-# Connect to the server
-$ numstore-cli connect localhost:7777
-
-# Create a new variable
-> CREATE VARIABLE temperature TYPE float64
-
-# Insert data
-> INSERT INTO temperature VALUES (23.5, 24.1, 22.8)</code></pre>
-
-    <h2 id="api-reference">API Reference</h2>
-
-    <h3>C Library</h3>
-    <p>The Numstore C library provides low-level access to all database operations.</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Function</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>ns_connect()</code></td>
-                <td>Establish a connection to the database</td>
-            </tr>
-            <tr>
-                <td><code>ns_create_variable()</code></td>
-                <td>Create a new variable</td>
-            </tr>
-            <tr>
-                <td><code>ns_insert()</code></td>
-                <td>Insert data into a variable</td>
-            </tr>
-            <tr>
-                <td><code>ns_query()</code></td>
-                <td>Query data from a variable</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="warning">
-        <strong>Warning:</strong> Always close your database connections properly to prevent resource leaks.
-    </div>
-
-    <h3>Python API</h3>
-    <pre><code>import numstore
-
-# Connect to database
-conn = numstore.connect('localhost:7777')
-
-# Create variable
-conn.create_variable('temperature', dtype='float64')
-
-# Insert data
-conn.insert('temperature', [23.5, 24.1, 22.8])
-
-# Query data
-data = conn.query('temperature', start=0, end=10)
-
-# Close connection
-conn.close()</code></pre>
-
-    <hr style="margin: 40px 0; border: none; border-top: 1px solid #d1d5db;">
-
-    <p style="text-align: center; color: #6b7280; font-size: 14px;">
-        Replace this entire file with your Sphinx-generated HTML documentation (e.g., <code>sphinx-build -b singlehtml source/ build/</code>)
-    </p>
 </body>
 </html>
