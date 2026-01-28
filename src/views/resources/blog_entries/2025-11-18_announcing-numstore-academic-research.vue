@@ -1,7 +1,9 @@
-<!-- Directory: /blog/entries/2025-11-18_announcing-numstore-academic-research.vue -->
 <template>
   <article class="prose max-w-3xl mx-auto px-6 py-12">
-    <h1>{{ meta.title }}</h1>
+    <header class="mb-8 not-prose">
+      <time class="text-sm text-cyan-600 font-medium">{{ meta.date }}</time>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{{ meta.title }}</h1>
+    </header>
 
     <p class="lead text-lg text-gray-700">
       Today, I'm excited to announce a major shift in how I'm positioning NumStore:
@@ -164,8 +166,10 @@
 
 
 <script lang="ts" setup>
-const meta = {
+export const meta = {
   title: 'Announcing NumStore: Built for Academic Research, Scaled for Business',
   date: '2025-11-18',
 }
+
+export const summary = 'Introducing the NumStore Academic Research Program with free licenses for students, discounted pricing for institutions, and direct technical support for researchers.'
 </script>

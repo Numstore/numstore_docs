@@ -1,7 +1,9 @@
-<!-- Directory: /blog/entries/2025-11-23_usage-example.vue -->
 <template>
   <article class="prose max-w-3xl mx-auto px-6 py-12">
-    <h1>{{ meta.title }}</h1>
+    <header class="mb-8 not-prose">
+      <time class="text-sm text-cyan-600 font-medium">{{ meta.date }}</time>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{{ meta.title }}</h1>
+    </header>
 
     <p class="lead text-lg text-gray-700">
       Let's walk through a complete example: collecting sensor data from a temperature monitoring
@@ -438,8 +440,10 @@ if __name__ == '__main__':
 
 
 <script lang="ts" setup>
-const meta = {
+export const meta = {
   title: 'NumStore Usage Example: Temperature Monitoring System',
   date: '2025-11-23',
 }
+
+export const summary = 'Complete tutorial: build a temperature monitoring system with NumStore. Covers installation, data ingestion, querying, anomaly detection, and ML integration.'
 </script>

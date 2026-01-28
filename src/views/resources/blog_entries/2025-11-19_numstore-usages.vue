@@ -1,7 +1,9 @@
-<!-- Directory: /blog/entries/2025-11-19_numstore-usages.vue -->
 <template>
   <article class="prose max-w-3xl mx-auto px-6 py-12">
-    <h1>{{ meta.title }}</h1>
+    <header class="mb-8 not-prose">
+      <time class="text-sm text-cyan-600 font-medium">{{ meta.date }}</time>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{{ meta.title }}</h1>
+    </header>
 
     <p class="lead text-lg text-gray-700">
       NumStore excels at storing and querying numeric, time-series, and contiguous array data.
@@ -210,8 +212,10 @@
 
 
 <script lang="ts" setup>
-const meta = {
+export const meta = {
   title: 'NumStore Use Cases: Where It Excels (and Where It Doesn\'t)',
   date: '2025-11-19',
 }
+
+export const summary = 'A comprehensive guide to NumStore use cases: scientific data collection, IoT sensors, financial time-series, ML feature stores, and when to choose other databases instead.'
 </script>
