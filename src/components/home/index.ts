@@ -1,0 +1,8 @@
+export { default as HeroSection } from './HeroSection.vue'
+export { default as VideoDemo } from './VideoDemo.vue'
+export { default as FeatureCards } from './FeatureCards.vue'
+export { default as DocsCategories } from './DocsCategories.vue'
+export { default as CodeExample } from './CodeExample.vue'
+export { default as WorkloadCards } from './WorkloadCards.vue'
+export { default as GitHubRepos } from './GitHubRepos.vue'
+export { default as CtaSection } from './CtaSection.vue'
