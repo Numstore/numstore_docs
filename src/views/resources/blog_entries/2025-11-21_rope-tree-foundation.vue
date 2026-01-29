@@ -1,7 +1,9 @@
-<!-- Directory: /blog/entries/2025-11-21_rope-tree-foundation.vue -->
 <template>
   <article class="prose max-w-3xl mx-auto px-6 py-12">
-    <h1>{{ meta.title }}</h1>
+    <header class="mb-8 not-prose">
+      <time class="text-sm text-cyan-600 font-medium">{{ meta.date }}</time>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{{ meta.title }}</h1>
+    </header>
 
     <p class="lead text-lg text-gray-700">
       NumStore's architecture combines two fundamental data structures—ropes and R+ trees—to achieve
@@ -330,8 +332,10 @@ Chunk 2: [2.1, 2.2, 2.3, 2.4, ..., 3.0]  // 10,000 samples, contiguous
 
 
 <script lang="ts" setup>
-const meta = {
+export const meta = {
   title: 'NumStore Architecture: Rope + R+ Tree Data Structure Foundation',
   date: '2025-11-21',
 }
+
+export const summary = 'Deep dive into NumStore\'s core architecture: how rope data structures provide contiguous storage while R+ trees enable O(log n) range queries.'
 </script>

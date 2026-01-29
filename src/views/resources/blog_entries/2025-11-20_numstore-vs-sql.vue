@@ -1,7 +1,9 @@
-<!-- Directory: /blog/entries/2025-11-20_numstore-vs-sql.vue -->
 <template>
   <article class="prose max-w-3xl mx-auto px-6 py-12">
-    <h1>{{ meta.title }}</h1>
+    <header class="mb-8 not-prose">
+      <time class="text-sm text-cyan-600 font-medium">{{ meta.date }}</time>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{{ meta.title }}</h1>
+    </header>
 
     <p class="lead text-lg text-gray-700">
       NumStore isn't trying to replace SQL databases. It solves a fundamentally different
@@ -266,8 +268,10 @@ while (collecting) {
 
 
 <script lang="ts" setup>
-const meta = {
+export const meta = {
   title: 'Why NumStore vs SQL: Solving a Problem Databases Weren\'t Built For',
   date: '2025-11-20',
 }
+
+export const summary = 'A detailed comparison of NumStore vs SQL databases for time-series data. Includes storage overhead analysis, query performance benchmarks, and when to use each.'
 </script>

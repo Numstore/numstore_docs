@@ -1,7 +1,9 @@
-<!-- Directory: /blog/entries/2025-11-22_contiguous-data-model.vue -->
 <template>
   <article class="prose max-w-3xl mx-auto px-6 py-12">
-    <h1>{{ meta.title }}</h1>
+    <header class="mb-8 not-prose">
+      <time class="text-sm text-cyan-600 font-medium">{{ meta.date }}</time>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{{ meta.title }}</h1>
+    </header>
 
     <p class="lead text-lg text-gray-700">
       NumStore's contiguous data model is the secret to its performance. By storing numeric arrays
@@ -349,8 +351,10 @@ fft = np.fft.fft(data)
 
 
 <script lang="ts" setup>
-const meta = {
+export const meta = {
   title: 'NumStore\'s Contiguous Data Model: The Secret to 10-100x Performance',
   date: '2025-11-22',
 }
+
+export const summary = 'How NumStore\'s contiguous data model enables zero-copy reads, cache efficiency, SIMD vectorization, and 10-100x faster queries than row-based databases.'
 </script>

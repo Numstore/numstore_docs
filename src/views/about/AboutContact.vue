@@ -8,67 +8,105 @@ const form = ref({
   message: ''
 })
 
+const emails = [
+  { label: "General inquiries", email: "hello@numstore.dev" },
+  { label: "Enterprise & support", email: "support@numstore.dev" },
+  { label: "Consulting", email: "consulting@numstore.dev" },
+  { label: "Academic & research", email: "academic@numstore.dev" },
+  { label: "Security issues", email: "security@numstore.dev" }
+]
+
 function submitForm() {
-  // placeholder: log to console
-  console.log('Contact form submitted:', form.value)
-  alert('Form submitted (demo only). Please send an email to hello@thecompany.com.')
-  form.value = {name: '', email: '', subject: '', message: ''}
+  const mailto = `mailto:hello@numstore.dev?subject=${encodeURIComponent(form.value.subject)}&body=${encodeURIComponent(`From: ${form.value.name} <${form.value.email}>\n\n${form.value.message}`)}`
+  window.location.href = mailto
 }
 </script>
 
 <template>
-  <main class="max-w-3xl mx-auto px-6 py-12 space-y-10">
+  <main class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <section class="space-y-2">
-      <h1 class="text-3xl font-bold">Contact Us</h1>
-      <p class="text-gray-700">
-        We’d love to hear from you. For general inquiries, support, or business questions, use the form
-        below or reach us directly.
-      </p>
-    </section>
+    <div class="bg-gradient-to-br from-cyan-600 via-cyan-700 to-teal-800 text-white py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl font-bold mb-4">Contact</h1>
+        <p class="text-cyan-100 text-lg max-w-2xl">
+          Questions about NumStore? Reach out directly or use the form below.
+        </p>
+      </div>
+    </div>
 
-    <!-- Direct info -->
-    <section class="space-y-3">
-      <h2 class="text-xl font-semibold">Direct contact</h2>
-      <ul class="list-disc pl-6 space-y-1">
-        <li>Email: <a class="underline" href="mailto:hello@thecompany.com">hello@thecompany.com</a></li>
-        <li>Support: <a class="underline" href="mailto:support@thecompany.com">support@thecompany.com</a></li>
-        <li>Security: <a class="underline" href="mailto:security@thecompany.com">security@thecompany.com</a>
-        </li>
-      </ul>
-    </section>
+    <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Direct Contact -->
+        <div class="space-y-6">
+          <h2 class="text-2xl font-bold text-gray-900">Direct contact</h2>
+          <div class="space-y-4">
+            <a
+              v-for="item in emails"
+              :key="item.email"
+              :href="`mailto:${item.email}`"
+              class="block bg-white rounded-lg border border-gray-200 p-4 hover:border-cyan-300 hover:shadow-sm transition-all"
+            >
+              <div class="text-sm text-gray-500 mb-1">{{ item.label }}</div>
+              <div class="text-cyan-600 font-medium">{{ item.email }}</div>
+            </a>
+          </div>
 
-    <!-- Form -->
-    <section class="space-y-3">
-      <h2 class="text-xl font-semibold">Send a message</h2>
-      <form class="space-y-4" @submit.prevent="submitForm">
-        <div>
-          <label class="block text-sm font-medium">Name</label>
-          <input v-model="form.name" class="w-full border rounded px-3 py-2 text-sm" required/>
+          <div class="bg-gray-100 rounded-lg p-4 text-sm text-gray-600">
+            <strong>Response times:</strong> I typically respond within 1-2 business days.
+            For urgent production issues, use <a href="mailto:support@numstore.dev" class="text-cyan-600 underline">support@numstore.dev</a>.
+          </div>
         </div>
 
-        <div>
-          <label class="block text-sm font-medium">Email</label>
-          <input v-model="form.email" class="w-full border rounded px-3 py-2 text-sm" required type="email"/>
-        </div>
+        <!-- Contact Form -->
+        <div class="space-y-6">
+          <h2 class="text-2xl font-bold text-gray-900">Send a message</h2>
+          <form class="space-y-4" @submit.prevent="submitForm">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input
+                v-model="form.name"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                required
+              />
+            </div>
 
-        <div>
-          <label class="block text-sm font-medium">Subject</label>
-          <input v-model="form.subject" class="w-full border rounded px-3 py-2 text-sm"/>
-        </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                v-model="form.email"
+                type="email"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                required
+              />
+            </div>
 
-        <div>
-          <label class="block text-sm font-medium">Message</label>
-          <textarea v-model="form.message" class="w-full border rounded px-3 py-2 text-sm h-32" required></textarea>
-        </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+              <input
+                v-model="form.subject"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              />
+            </div>
 
-        <button class="underline" type="submit">Send (demo only)</button>
-      </form>
-      <p class="text-xs text-gray-600">This form is a static demo. For real inquiries, please email us directly.</p>
-    </section>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea
+                v-model="form.message"
+                rows="5"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-cyan-600 text-white font-medium py-3 rounded-lg hover:bg-cyan-700 transition-colors"
+            >
+              Open in email client
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
-
-<style scoped>
-/* keep styling minimal */
-</style>
